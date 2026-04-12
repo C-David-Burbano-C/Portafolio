@@ -1,6 +1,6 @@
 # Portafolio Modular
 
-Implementacion del portafolio en `Next.js 16`, `TypeScript` y `Tailwind CSS`, tomando como fuente el kit modular ubicado en `figma_layers/`.
+Implementacion del portafolio en `Next.js 16`, `TypeScript` y `Tailwind CSS`
 
 ## Requisitos
 
