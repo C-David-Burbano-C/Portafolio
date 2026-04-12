@@ -29,7 +29,7 @@ function ExperienceItem({
   description,
 }: (typeof experienceItems)[number]) {
   return (
-    <article className="relative ml-4 rounded-3xl border border-line bg-surface p-4 sm:ml-6 sm:p-6">
+    <article className="relative ml-4 rounded-3xl border border-line bg-surface p-4 shadow-md sm:ml-6 sm:p-6">
       <div className="bg-cyan absolute -left-4 top-7 h-3 w-3 rounded-full shadow-md sm:-left-6 sm:h-4 sm:w-4" />
       <h4 className="font-display text-lg font-semibold text-foreground sm:text-2xl">
         {title}
@@ -46,14 +46,14 @@ function ExperienceItem({
 export default function ExperienceSection() {
   return (
     <section id="experiencia" className="flex flex-col gap-5 sm:gap-6">
-      <div className="bg-surface relative overflow-hidden rounded-3xl border border-line px-5 py-5 sm:px-6 sm:py-7">
-        <div className="bg-cyan absolute -left-10 -top-10 h-28 w-28 rounded-full opacity-10 blur-3xl" />
-        <div className="bg-accent absolute -right-10 -top-8 h-24 w-24 rounded-full opacity-10 blur-3xl" />
+      <div className="bg-surface relative overflow-hidden rounded-3xl border border-line px-5 py-5 shadow-md sm:px-6 sm:py-7">
+        <div className="bg-cyan absolute -left-10 -top-10 h-28 w-28 rounded-full opacity-20 blur-3xl" />
+        <div className="bg-accent absolute -right-10 -top-8 h-24 w-24 rounded-full opacity-20 blur-3xl" />
         <div className="relative flex flex-col items-center gap-4 text-center">
           <h2 className="font-display text-2xl font-semibold text-foreground sm:text-4xl">
             Experiencia & Contacto
           </h2>
-          <div className="bg-accent h-1 w-16 rounded-full sm:w-20" />
+          <div className="bg-accent h-1.5 w-20 rounded-full sm:w-24" />
         </div>
       </div>
 

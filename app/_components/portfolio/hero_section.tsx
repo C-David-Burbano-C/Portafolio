@@ -28,9 +28,12 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="bg-surface rounded-3xl border border-line px-4 py-7 sm:px-8 sm:py-10 lg:px-10"
+      className="bg-surface relative overflow-hidden rounded-3xl border border-line px-4 py-7 sm:px-8 sm:py-10 lg:px-10"
     >
-      <div className="grid grid-cols-[1.4fr_0.8fr] gap-4 sm:gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center lg:gap-10">
+      <div className="bg-cyan absolute -left-10 top-0 h-32 w-32 rounded-full opacity-20 blur-3xl sm:h-40 sm:w-40" />
+      <div className="bg-violet absolute -right-8 bottom-4 h-36 w-36 rounded-full opacity-20 blur-3xl sm:h-44 sm:w-44" />
+
+      <div className="relative grid grid-cols-[1.4fr_0.8fr] gap-4 sm:gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center lg:gap-10">
         <div className="space-y-4">
           <p className="text-cyan text-sm font-medium uppercase tracking-[0.2em]">
             Inicio
@@ -38,7 +41,9 @@ export default function HeroSection() {
           <h1 className="font-display text-3xl font-semibold leading-tight text-foreground sm:text-5xl lg:max-w-xl lg:text-6xl">
             Innovo sin miedo: convierto ideas en productos reales.
           </h1>
-          <p className="text-base text-muted sm:text-2xl">Frontend Developer</p>
+          <p className="text-accent text-base font-medium sm:text-2xl">
+            Frontend Developer
+          </p>
           <p className="max-w-2xl text-sm leading-6 text-muted sm:text-base sm:leading-7">
             Frontend Developer en formacion en la Universidad Cooperativa de
             Colombia (Pasto), con experiencia en desarrollo web y bases de datos
@@ -47,7 +52,7 @@ export default function HeroSection() {
 
           <a
             href="#contacto"
-            className="bg-accent inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-950 shadow-md"
+            className="bg-accent inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg"
           >
             Contactame
           </a>
@@ -60,14 +65,14 @@ export default function HeroSection() {
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="border-line text-muted rounded-full border px-3 py-2 text-[11px] sm:text-sm"
+                  className="bg-base/70 border-line text-muted rounded-full border px-3 py-2 text-[11px] sm:text-sm"
                 >
                   {item.label}
                 </a>
               ) : (
                 <span
                   key={item.label}
-                  className="border-line text-muted rounded-full border px-3 py-2 text-[11px] sm:text-sm"
+                  className="bg-base/70 border-line text-muted rounded-full border px-3 py-2 text-[11px] sm:text-sm"
                 >
                   {item.label}
                 </span>

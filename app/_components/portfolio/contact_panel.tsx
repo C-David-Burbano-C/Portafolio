@@ -37,10 +37,11 @@ export default function ContactPanel() {
   return (
     <section
       id="contacto"
-      className="bg-surface relative overflow-hidden rounded-3xl border border-line px-5 py-6 sm:px-8 sm:py-8"
+      className="bg-surface relative overflow-hidden rounded-3xl border border-line px-5 py-6 shadow-md sm:px-8 sm:py-8"
     >
-      <div className="bg-cyan absolute -left-10 -top-12 h-32 w-32 rounded-full opacity-10 blur-3xl" />
-      <div className="bg-accent absolute -right-10 -top-10 h-28 w-28 rounded-full opacity-10 blur-3xl" />
+      <div className="bg-cyan absolute -left-10 -top-12 h-32 w-32 rounded-full opacity-20 blur-3xl" />
+      <div className="bg-accent absolute -right-10 -top-10 h-28 w-28 rounded-full opacity-20 blur-3xl" />
+      <div className="bg-violet absolute bottom-0 right-1/3 h-24 w-24 rounded-full opacity-20 blur-3xl" />
 
       <div className="relative grid gap-6 sm:gap-8 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="space-y-4">
@@ -59,14 +60,17 @@ export default function ContactPanel() {
 
           <a
             href="mailto:carlos.burbano@simerelectronics.com"
-            className="bg-accent inline-flex rounded-full px-5 py-3 text-sm font-semibold text-slate-950 shadow-md"
+            className="bg-accent inline-flex rounded-full px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg"
           >
             Enviar Mensaje
           </a>
 
           <div className="space-y-4 pt-2">
             {contactPeople.map((person) => (
-              <div key={person.email} className="space-y-1 text-sm text-muted">
+              <div
+                key={person.email}
+                className="border-line bg-base/80 rounded-2xl border p-4 text-sm text-muted"
+              >
                 <p className="font-semibold text-foreground">{person.name}</p>
                 <a href={`tel:${person.phone.replace(/\s+/g, "")}`} className="block">
                   {person.phone}

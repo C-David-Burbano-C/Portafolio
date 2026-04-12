@@ -20,7 +20,7 @@ export default function ProjectCardBase({
   imageAlt,
 }: ProjectCardBaseProps) {
   return (
-    <article className="bg-surface flex h-full flex-col rounded-3xl border border-line p-4 sm:p-5">
+    <article className="bg-surface flex h-full flex-col rounded-3xl border border-line p-4 shadow-md sm:p-5">
       <div className="bg-base border-line relative h-48 overflow-hidden rounded-2xl border sm:h-44">
         <Image
           src={imageSrc}
@@ -29,10 +29,11 @@ export default function ProjectCardBase({
           sizes="(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-slate-950/20" />
-        <div className="bg-cyan absolute left-4 top-4 h-16 w-16 rounded-full opacity-10 blur-2xl" />
-        <div className="bg-violet absolute bottom-4 right-4 h-20 w-20 rounded-full opacity-10 blur-2xl" />
-        <div className="border-line bg-surface/90 text-foreground absolute bottom-3 left-3 rounded-full border px-3 py-2 text-xs font-semibold sm:bottom-4 sm:left-4 sm:px-4 sm:text-sm">
+        <div className="absolute inset-0 bg-slate-950/8" />
+        <div className="bg-cyan absolute left-4 top-4 h-16 w-16 rounded-full opacity-20 blur-2xl" />
+        <div className="bg-violet absolute bottom-4 right-4 h-20 w-20 rounded-full opacity-20 blur-2xl" />
+        <div className="bg-accent absolute right-4 top-4 h-8 w-8 rounded-full opacity-80" />
+        <div className="border-line bg-surface/90 text-foreground absolute bottom-3 left-3 rounded-full border px-3 py-2 text-xs font-semibold shadow-md sm:bottom-4 sm:left-4 sm:px-4 sm:text-sm">
           Preview del proyecto
         </div>
       </div>
@@ -50,7 +51,7 @@ export default function ProjectCardBase({
           href={demoUrl}
           target="_blank"
           rel="noreferrer"
-          className="border-line text-foreground rounded-full border px-4 py-2 text-sm font-semibold"
+          className="bg-accent rounded-full px-4 py-2 text-sm font-semibold text-slate-950 shadow-sm"
         >
           Demo
         </a>

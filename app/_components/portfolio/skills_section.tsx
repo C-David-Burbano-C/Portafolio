@@ -2,14 +2,17 @@ const skills = [
   {
     title: "Frontend",
     detail: "Angular, TypeScript y Tailwind",
+    tone: "bg-cyan",
   },
   {
     title: "Backend y Datos",
     detail: "Python, Django, SQL y PostgreSQL",
+    tone: "bg-accent",
   },
   {
     title: "Herramientas",
     detail: "Java, XAMPP, soporte tecnico y redes",
+    tone: "bg-violet",
   },
 ];
 
@@ -32,8 +35,10 @@ export default function SkillsSection() {
         {skills.map((skill) => (
           <article
             key={skill.title}
-            className="bg-surface border-line flex min-h-24 flex-col justify-between rounded-3xl border p-3 sm:min-h-36 sm:p-5 lg:min-h-48 lg:p-6"
+            className="bg-surface border-line relative flex min-h-24 flex-col justify-between overflow-hidden rounded-3xl border p-3 shadow-md sm:min-h-36 sm:p-5 lg:min-h-48 lg:p-6"
           >
+            <div className={`${skill.tone} absolute right-0 top-0 h-16 w-16 rounded-full opacity-20 blur-2xl`} />
+            <div className={`${skill.tone} mb-4 h-1.5 w-12 rounded-full`} />
             <h3 className="font-display text-xs font-semibold text-foreground sm:text-lg lg:text-2xl">
               {skill.title}
             </h3>

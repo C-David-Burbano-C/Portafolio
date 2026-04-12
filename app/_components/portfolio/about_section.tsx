@@ -2,7 +2,8 @@ import Image from "next/image";
 
 function Portrait() {
   return (
-    <div className="border-line bg-base relative h-24 w-24 overflow-hidden rounded-full border sm:h-28 sm:w-28 lg:h-32 lg:w-32">
+    <div className="bg-accent rounded-full p-1 shadow-md">
+      <div className="border-line bg-base relative h-24 w-24 overflow-hidden rounded-full border sm:h-28 sm:w-28 lg:h-32 lg:w-32">
       <Image
         src="/images/FOTO_PERFIL.jpg"
         alt="Foto de perfil de Carlos David Burbano Cuchala"
@@ -10,6 +11,7 @@ function Portrait() {
         sizes="(min-width: 1024px) 128px, (min-width: 640px) 112px, 96px"
         className="object-cover"
       />
+      </div>
     </div>
   );
 }
@@ -18,9 +20,11 @@ export default function AboutSection() {
   return (
     <section
       id="sobre-mi"
-      className="bg-surface rounded-3xl border border-line px-5 py-6 sm:px-8 sm:py-8"
+      className="bg-surface relative overflow-hidden rounded-3xl border border-line px-5 py-6 sm:px-8 sm:py-8"
     >
-      <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3 lg:items-center">
+      <div className="bg-cyan absolute right-0 top-0 h-28 w-28 rounded-full opacity-10 blur-3xl" />
+
+      <div className="relative grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3 lg:items-center">
         <div>
           <p className="text-cyan text-sm font-medium uppercase tracking-[0.2em]">
             About
