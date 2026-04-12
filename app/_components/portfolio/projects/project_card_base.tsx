@@ -1,9 +1,13 @@
+import Image from "next/image";
+
 type ProjectCardBaseProps = {
   title: string;
   summary: string;
   tools: string;
   demoUrl: string;
   repoUrl: string;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 export default function ProjectCardBase({
@@ -12,13 +16,23 @@ export default function ProjectCardBase({
   tools,
   demoUrl,
   repoUrl,
+  imageSrc,
+  imageAlt,
 }: ProjectCardBaseProps) {
   return (
     <article className="bg-surface flex h-full flex-col rounded-3xl border border-line p-5">
-      <div className="bg-base border-line relative flex h-44 items-center justify-center overflow-hidden rounded-2xl border">
+      <div className="bg-base border-line relative h-44 overflow-hidden rounded-2xl border">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          sizes="(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-950/20" />
         <div className="bg-cyan absolute left-4 top-4 h-16 w-16 rounded-full opacity-10 blur-2xl" />
         <div className="bg-violet absolute bottom-4 right-4 h-20 w-20 rounded-full opacity-10 blur-2xl" />
-        <div className="border-line text-muted relative rounded-full border px-4 py-2 text-sm">
+        <div className="border-line bg-surface/90 text-foreground absolute bottom-4 left-4 rounded-full border px-4 py-2 text-sm font-semibold">
           Preview del proyecto
         </div>
       </div>

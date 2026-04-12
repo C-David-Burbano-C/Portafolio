@@ -8,6 +8,8 @@ export default function ProjectBatteryLifeEstimatorCard() {
       tools="Analisis de datos, frontend"
       demoUrl="https://battery-life-estimator.vercel.app/"
       repoUrl="https://github.com/RexbilXD/BatteryLifeEstimator"
+      imageSrc="/images/battery-life-estimator.png"
+      imageAlt="Vista previa de Battery Life Estimator"
     />
   );
 }

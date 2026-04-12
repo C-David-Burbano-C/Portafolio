@@ -8,6 +8,8 @@ export default function ProjectMultivariableCard() {
       tools="TypeScript, Tailwind"
       demoUrl="https://multivariable-explorer.vercel.app/"
       repoUrl="https://github.com/C-David-Burbano-C/MultivariableExplorer"
+      imageSrc="/images/multivariable-explorer.png"
+      imageAlt="Vista previa de Multivariable Explorer"
     />
   );
 }

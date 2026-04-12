@@ -8,6 +8,8 @@ export default function ProjectIntegracionContinuaCard() {
       tools="TypeScript, web app"
       demoUrl="https://integracion-continua-nu.vercel.app/"
       repoUrl="https://github.com/C-David-Burbano-C/integracion_continua"
+      imageSrc="/images/integracion-continua.png"
+      imageAlt="Vista previa de Integracion Continua"
     />
   );
 }

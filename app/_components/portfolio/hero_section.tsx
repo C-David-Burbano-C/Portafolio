@@ -1,23 +1,16 @@
+import Image from "next/image";
+
 function HeroSignal() {
   return (
-    <div className="relative flex h-40 w-40 items-center justify-center rounded-full border border-line bg-base sm:h-48 sm:w-48 lg:h-64 lg:w-64">
-      <div className="border-line absolute inset-3 rounded-full border sm:inset-4 lg:inset-6" />
-      <div className="border-accent absolute inset-8 rounded-full border sm:inset-10 lg:inset-14" />
-      <div className="bg-cyan absolute h-10 w-10 rounded-full opacity-20 blur-xl sm:h-12 sm:w-12 lg:h-16 lg:w-16" />
-
-      <div className="border-line bg-surface relative flex h-14 w-14 items-center justify-center rounded-3xl border text-base font-semibold text-foreground shadow-md sm:h-16 sm:w-16 lg:h-24 lg:w-24 lg:text-2xl">
-        CB
-      </div>
-
-      <span className="bg-surface border-line text-muted absolute left-1/2 top-4 -translate-x-1/2 rounded-full border px-3 py-1 text-xs font-semibold">
-        UI
-      </span>
-      <span className="bg-surface border-line text-muted absolute right-2 top-1/2 -translate-y-1/2 rounded-full border px-3 py-1 text-xs font-semibold">
-        Web
-      </span>
-      <span className="bg-surface border-line text-muted absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border px-3 py-1 text-xs font-semibold">
-        Code
-      </span>
+    <div className="relative h-40 w-40 sm:h-48 sm:w-48 lg:h-64 lg:w-64">
+      <Image
+        src="/images/hero_signal.svg"
+        alt="Visual del hero"
+        fill
+        sizes="(min-width: 1024px) 256px, (min-width: 640px) 192px, 160px"
+        className="object-contain"
+        priority
+      />
     </div>
   );
 }

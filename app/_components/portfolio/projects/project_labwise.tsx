@@ -8,6 +8,8 @@ export default function ProjectLabWiseCard() {
       tools="Web app, gestion academica"
       demoUrl="https://lab-wise.vercel.app/dashboard"
       repoUrl="https://github.com/RexbilXD/LabWise"
+      imageSrc="/images/lab-wise.png"
+      imageAlt="Vista previa de LabWise"
     />
   );
 }

@@ -1,7 +1,15 @@
-function PortraitPlaceholder() {
+import Image from "next/image";
+
+function Portrait() {
   return (
-    <div className="bg-base border-line flex h-24 w-24 items-center justify-center rounded-full border text-lg font-semibold text-foreground sm:h-28 sm:w-28 lg:h-32 lg:w-32">
-      CB
+    <div className="border-line bg-base relative h-24 w-24 overflow-hidden rounded-full border sm:h-28 sm:w-28 lg:h-32 lg:w-32">
+      <Image
+        src="/images/FOTO_PERFIL.jpg"
+        alt="Foto de perfil de Carlos David Burbano Cuchala"
+        fill
+        sizes="(min-width: 1024px) 128px, (min-width: 640px) 112px, 96px"
+        className="object-cover"
+      />
     </div>
   );
 }
@@ -23,7 +31,7 @@ export default function AboutSection() {
         </div>
 
         <div className="flex justify-end lg:justify-center">
-          <PortraitPlaceholder />
+          <Portrait />
         </div>
 
         <div className="col-span-2 lg:col-span-1">
