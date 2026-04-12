@@ -6,6 +6,8 @@ export default function ProjectLabWiseCard() {
       title="LabWise"
       summary="Plataforma inteligente para gestion y enriquecimiento de guias de laboratorio."
       tools="Web app, gestion academica"
+      demoUrl="https://lab-wise.vercel.app/dashboard"
+      repoUrl="https://github.com/RexbilXD/LabWise"
     />
   );
 }

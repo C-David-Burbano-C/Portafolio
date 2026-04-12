@@ -6,6 +6,8 @@ export default function ProjectIntegracionContinuaCard() {
       title="Integracion Continua"
       summary="Programa educativo orientado al aprendizaje infantil."
       tools="TypeScript, web app"
+      demoUrl="https://integracion-continua-nu.vercel.app/"
+      repoUrl="https://github.com/C-David-Burbano-C/integracion_continua"
     />
   );
 }

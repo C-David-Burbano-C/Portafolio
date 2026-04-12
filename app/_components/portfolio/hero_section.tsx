@@ -22,7 +22,14 @@ function HeroSignal() {
   );
 }
 
-const highlights = ["GitHub: C-David-", "UCC Pasto", "Innovacion constante"];
+const highlights = [
+  {
+    label: "GitHub: C-David-Burbano-C",
+    href: "https://github.com/C-David-Burbano-C",
+  },
+  { label: "UCC Pasto" },
+  { label: "Innovacion constante" },
+];
 
 export default function HeroSection() {
   return (
@@ -54,12 +61,24 @@ export default function HeroSection() {
 
           <div className="flex flex-wrap gap-3 pt-2">
             {highlights.map((item) => (
-              <span
-                key={item}
-                className="border-line text-muted rounded-full border px-3 py-2 text-xs sm:text-sm"
-              >
-                {item}
-              </span>
+              item.href ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="border-line text-muted rounded-full border px-3 py-2 text-xs sm:text-sm"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <span
+                  key={item.label}
+                  className="border-line text-muted rounded-full border px-3 py-2 text-xs sm:text-sm"
+                >
+                  {item.label}
+                </span>
+              )
             ))}
           </div>
         </div>

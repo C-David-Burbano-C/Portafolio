@@ -6,6 +6,8 @@ export default function ProjectLumpyMedCard() {
       title="LumpyMed Frontend"
       summary="Aplicacion para calculo de dosis en infantes con enfoque clinico."
       tools="Angular, Tailwind"
+      demoUrl="https://lumpy-med-frontend.vercel.app/"
+      repoUrl="https://github.com/C-David-Burbano-C/LumpyMedFrontend"
     />
   );
 }

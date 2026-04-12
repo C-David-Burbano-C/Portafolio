@@ -2,12 +2,16 @@ type ProjectCardBaseProps = {
   title: string;
   summary: string;
   tools: string;
+  demoUrl: string;
+  repoUrl: string;
 };
 
 export default function ProjectCardBase({
   title,
   summary,
   tools,
+  demoUrl,
+  repoUrl,
 }: ProjectCardBaseProps) {
   return (
     <article className="bg-surface flex h-full flex-col rounded-3xl border border-line p-5">
@@ -28,12 +32,22 @@ export default function ProjectCardBase({
       <p className="text-cyan mt-3 text-sm">{tools}</p>
 
       <div className="mt-5 flex gap-3">
-        <span className="border-line text-foreground rounded-full border px-4 py-2 text-sm font-semibold">
+        <a
+          href={demoUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="border-line text-foreground rounded-full border px-4 py-2 text-sm font-semibold"
+        >
           Demo
-        </span>
-        <span className="border-line text-foreground rounded-full border px-4 py-2 text-sm font-semibold">
+        </a>
+        <a
+          href={repoUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="border-line text-foreground rounded-full border px-4 py-2 text-sm font-semibold"
+        >
           GitHub
-        </span>
+        </a>
       </div>
 
       <div className="mt-4 bg-line h-px w-full" />

@@ -6,6 +6,8 @@ export default function ProjectMultivariableCard() {
       title="Multivariable Explorer"
       summary="Calculadora de derivadas e integrales con visualizacion matematica interactiva."
       tools="TypeScript, Tailwind"
+      demoUrl="https://multivariable-explorer.vercel.app/"
+      repoUrl="https://github.com/C-David-Burbano-C/MultivariableExplorer"
     />
   );
 }

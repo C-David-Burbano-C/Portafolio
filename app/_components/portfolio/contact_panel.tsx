@@ -57,15 +57,23 @@ export default function ContactPanel() {
             Si tienes una idea, la convertimos en una solucion funcional.
           </p>
 
-          <div className="bg-accent inline-flex rounded-full px-5 py-3 text-sm font-semibold text-slate-950 shadow-md">
+          <a
+            href="mailto:carlos.burbano@simerelectronics.com"
+            className="bg-accent inline-flex rounded-full px-5 py-3 text-sm font-semibold text-slate-950 shadow-md"
+          >
             Enviar Mensaje
-          </div>
+          </a>
 
           <div className="space-y-4 pt-2">
             {contactPeople.map((person) => (
               <div key={person.email} className="space-y-1 text-sm text-muted">
-                <p className="font-semibold text-foreground">{`${person.name} - ${person.phone}`}</p>
-                <p>{person.email}</p>
+                <p className="font-semibold text-foreground">{person.name}</p>
+                <a href={`tel:${person.phone.replace(/\s+/g, "")}`} className="block">
+                  {person.phone}
+                </a>
+                <a href={`mailto:${person.email}`} className="block">
+                  {person.email}
+                </a>
                 <p>{person.location}</p>
               </div>
             ))}
