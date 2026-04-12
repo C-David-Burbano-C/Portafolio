@@ -1,23 +1,23 @@
 export default function ExperienceSection() {
   return (
     <section id="experiencia" className="flex flex-col gap-6">
-      <div className="rounded-2xl border border-slate-800 bg-slate-900 px-5 py-4 sm:px-6">
+      <div className="bg-surface rounded-2xl border border-line px-5 py-4 sm:px-6">
         <div className="flex items-center justify-between gap-4">
-          <h2 className="text-2xl font-semibold text-slate-50 sm:text-3xl">
+          <h2 className="font-display text-2xl font-semibold text-foreground sm:text-3xl">
             Experiencia & Contacto
           </h2>
-          <div className="h-px flex-1 bg-slate-700" />
+          <div className="bg-line h-px flex-1" />
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-800 bg-slate-900 px-5 py-6 sm:px-8 sm:py-8">
-        <p className="text-sm font-medium uppercase tracking-wide text-blue-200">
+      <div className="bg-surface rounded-3xl border border-line px-5 py-6 sm:px-8 sm:py-8">
+        <p className="text-cyan text-sm font-medium uppercase tracking-[0.2em]">
           Experience
         </p>
-        <h3 className="mt-2 text-2xl font-semibold text-slate-50 sm:text-3xl">
+        <h3 className="font-display mt-2 text-2xl font-semibold text-foreground sm:text-3xl">
           Experiencia
         </h3>
-        <p className="mt-1 text-sm text-slate-400 sm:text-base">
+        <p className="text-muted mt-1 text-sm sm:text-base">
           Trayectoria profesional
         </p>
 
@@ -25,12 +25,12 @@ export default function ExperienceSection() {
           {[1, 2, 3].map((item) => (
             <article
               key={item}
-              className="rounded-2xl border border-slate-700 bg-slate-950 p-4"
+              className="bg-base rounded-2xl border border-line p-4"
             >
-              <p className="text-sm font-semibold text-slate-100">
+              <p className="font-display text-sm font-semibold text-foreground">
                 Registro base {item}
               </p>
-              <p className="mt-2 text-sm leading-6 text-slate-400">
+              <p className="text-muted mt-2 text-sm leading-6">
                 Placeholder para la línea de tiempo que se implementará en una
                 etapa posterior.
               </p>
