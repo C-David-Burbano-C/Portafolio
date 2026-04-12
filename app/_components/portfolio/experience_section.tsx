@@ -92,14 +92,6 @@ export default function ExperienceSection() {
         },
         {
           category: "Experiencia Academica",
-          title: "Estudio Universitario",
-          company: "Universidad Cooperativa de Colombia - Campus Pasto",
-          dates: "Actualidad",
-          description:
-            "Formacion universitaria en Ingenieria de Desarrollo de Software, fortaleciendo bases tecnicas y enfoque practico en desarrollo de productos.",
-        },
-        {
-          category: "Experiencia Laboral",
           title: "Analista Junior de Software",
           company: "SIMERELECTRONIC SAS",
           dates: "2026-Actualidad",
@@ -115,10 +107,18 @@ export default function ExperienceSection() {
           ],
         },
         {
+          category: "Experiencia Academica",
+          title: "Estudio Universitario",
+          company: "Universidad Cooperativa de Colombia - Campus Pasto",
+          dates: "2023-Actualidad",
+          description:
+            "Formacion universitaria en Ingenieria de Desarrollo de Software, fortaleciendo bases tecnicas y enfoque practico en desarrollo de productos.",
+        },
+        {
           category: "Experiencia Laboral",
           title: "Desarrollador Frontend",
           company: "SIMERELECTRONIC SAS",
-          dates: "2025",
+          dates: "2024-2025",
           description:
             "Desarrollo de interfaces web modernas y optimizacion de experiencia de usuario.",
           contacts: [
@@ -162,14 +162,6 @@ export default function ExperienceSection() {
         },
         {
           category: "Academic Experience",
-          title: "University Studies",
-          company: "Universidad Cooperativa de Colombia - Pasto Campus",
-          dates: "Present",
-          description:
-            "University studies in Software Development Engineering, strengthening technical foundations and a practical product development mindset.",
-        },
-        {
-          category: "Work Experience",
           title: "Junior Software Analyst",
           company: "SIMERELECTRONIC SAS",
           dates: "2026-Present",
@@ -185,10 +177,18 @@ export default function ExperienceSection() {
           ],
         },
         {
+          category: "Academic Experience",
+          title: "University Studies",
+          company: "Universidad Cooperativa de Colombia - Pasto Campus",
+          dates: "2023-Present",
+          description:
+            "University studies in Software Development Engineering, strengthening technical foundations and a practical product development mindset.",
+        },
+        {
           category: "Work Experience",
           title: "Frontend Developer",
           company: "SIMERELECTRONIC SAS",
-          dates: "2025",
+          dates: "2024-2025",
           description:
             "Development of modern web interfaces and optimization of user experience.",
           contacts: [
