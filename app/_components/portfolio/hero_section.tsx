@@ -28,10 +28,10 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="bg-surface relative overflow-hidden rounded-3xl border border-line px-4 py-7 sm:px-8 sm:py-10 lg:px-10"
+      className="bg-slate-900 relative overflow-hidden rounded-3xl border border-slate-700 px-4 py-7 sm:px-8 sm:py-10 lg:px-10"
     >
-      <div className="bg-cyan absolute -left-10 top-0 h-32 w-32 rounded-full opacity-20 blur-3xl sm:h-40 sm:w-40" />
-      <div className="bg-violet absolute -right-8 bottom-4 h-36 w-36 rounded-full opacity-20 blur-3xl sm:h-44 sm:w-44" />
+      <div className="bg-cyan-500 absolute -left-10 top-0 h-32 w-32 rounded-full opacity-20 blur-3xl sm:h-40 sm:w-40" />
+      <div className="bg-violet-500 absolute -right-8 bottom-4 h-36 w-36 rounded-full opacity-20 blur-3xl sm:h-44 sm:w-44" />
 
       <div className="relative grid grid-cols-[1.4fr_0.8fr] gap-4 sm:gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center lg:gap-10">
         <div className="space-y-4">
@@ -52,7 +52,7 @@ export default function HeroSection() {
 
           <a
             href="#contacto"
-            className="bg-accent inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg"
+            className="bg-blue-500 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg"
           >
             Contactame
           </a>
@@ -65,14 +65,14 @@ export default function HeroSection() {
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-base/70 border-line text-slate-200 rounded-full border px-3 py-2 text-[11px] sm:text-sm"
+                  className="bg-slate-950/70 border-slate-700 text-slate-200 rounded-full border px-3 py-2 text-[11px] sm:text-sm"
                 >
                   {item.label}
                 </a>
               ) : (
                 <span
                   key={item.label}
-                  className="bg-base/70 border-line text-slate-200 rounded-full border px-3 py-2 text-[11px] sm:text-sm"
+                  className="bg-slate-950/70 border-slate-700 text-slate-200 rounded-full border px-3 py-2 text-[11px] sm:text-sm"
                 >
                   {item.label}
                 </span>

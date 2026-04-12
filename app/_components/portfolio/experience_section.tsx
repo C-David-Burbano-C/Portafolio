@@ -29,14 +29,14 @@ function ExperienceItem({
   description,
 }: (typeof experienceItems)[number]) {
   return (
-    <article className="relative ml-4 rounded-3xl border border-line bg-surface p-4 shadow-md sm:ml-6 sm:p-6">
-      <div className="bg-cyan absolute -left-4 top-7 h-3 w-3 rounded-full shadow-md sm:-left-6 sm:h-4 sm:w-4" />
-      <h4 className="font-display text-lg font-semibold text-foreground sm:text-2xl">
+    <article className="relative ml-4 rounded-3xl border border-slate-700 bg-slate-900 p-4 shadow-md sm:ml-6 sm:p-6">
+      <div className="bg-cyan-500 absolute -left-4 top-7 h-3 w-3 rounded-full shadow-md sm:-left-6 sm:h-4 sm:w-4" />
+      <h4 className="font-display text-lg font-semibold text-white sm:text-2xl">
         {title}
       </h4>
-      <p className="mt-2 text-sm text-cyan sm:text-base">{company}</p>
-      <p className="mt-1 text-sm text-muted sm:text-base">{dates}</p>
-      <p className="mt-3 text-sm leading-7 text-muted sm:text-base">
+      <p className="mt-2 text-sm text-cyan-300 sm:text-base">{company}</p>
+      <p className="mt-1 text-sm text-gray-400 sm:text-base">{dates}</p>
+      <p className="mt-3 text-sm leading-7 text-gray-400 sm:text-base">
         {description}
       </p>
     </article>
@@ -46,29 +46,29 @@ function ExperienceItem({
 export default function ExperienceSection() {
   return (
     <section id="experiencia" className="flex flex-col gap-5 sm:gap-6">
-      <div className="bg-surface relative overflow-hidden rounded-3xl border border-line px-5 py-5 shadow-md sm:px-6 sm:py-7">
-        <div className="bg-cyan absolute -left-10 -top-10 h-28 w-28 rounded-full opacity-20 blur-3xl" />
-        <div className="bg-accent absolute -right-10 -top-8 h-24 w-24 rounded-full opacity-20 blur-3xl" />
+      <div className="bg-slate-900 relative overflow-hidden rounded-3xl border border-slate-700 px-5 py-5 shadow-md sm:px-6 sm:py-7">
+        <div className="bg-cyan-500 absolute -left-10 -top-10 h-28 w-28 rounded-full opacity-20 blur-3xl" />
+        <div className="bg-blue-500 absolute -right-10 -top-8 h-24 w-24 rounded-full opacity-20 blur-3xl" />
         <div className="relative flex flex-col items-center gap-4 text-center">
-          <h2 className="font-display text-2xl font-semibold text-foreground sm:text-4xl">
+          <h2 className="font-display text-2xl font-semibold text-white sm:text-4xl">
             Experiencia & Contacto
           </h2>
-          <div className="bg-accent h-1.5 w-20 rounded-full sm:w-24" />
+          <div className="bg-blue-500 h-1.5 w-20 rounded-full sm:w-24" />
         </div>
       </div>
 
       <div className="space-y-2">
-        <p className="text-cyan text-sm font-medium uppercase tracking-[0.2em]">
+        <p className="text-cyan-300 text-sm font-medium uppercase tracking-[0.2em]">
           Experience
         </p>
-        <h3 className="font-display text-3xl font-semibold text-foreground sm:text-4xl lg:text-5xl">
+        <h3 className="font-display text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
           Experiencia
         </h3>
-        <p className="text-base text-muted sm:text-xl">Trayectoria profesional</p>
+        <p className="text-base text-gray-400 sm:text-xl">Trayectoria profesional</p>
       </div>
 
       <div className="relative space-y-4">
-        <div className="bg-cyan/30 absolute bottom-4 left-1.5 top-4 w-0.5 sm:left-2" />
+        <div className="bg-cyan-500/30 absolute bottom-4 left-1.5 top-4 w-0.5 sm:left-2" />
         {experienceItems.map((item) => (
           <ExperienceItem key={item.title} {...item} />
         ))}

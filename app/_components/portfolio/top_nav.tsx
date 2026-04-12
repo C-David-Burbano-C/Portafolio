@@ -27,8 +27,8 @@ function NavLink({
       onClick={onNavigate}
       className={
         active
-          ? "bg-accent rounded-full px-4 py-2 text-sm font-semibold text-slate-950"
-          : "rounded-full px-4 py-2 text-sm font-medium text-muted"
+          ? "bg-blue-500 rounded-full px-4 py-2 text-sm font-semibold text-slate-950"
+          : "rounded-full px-4 py-2 text-sm font-medium text-gray-400"
       }
     >
       {label}
@@ -95,23 +95,23 @@ export default function TopNav() {
 
   return (
     <>
-      <header className="bg-surface border-line sticky top-3 z-40 rounded-2xl border px-4 py-4 sm:top-4 sm:px-6">
+      <header className="bg-slate-900 border-slate-700 sticky top-3 z-40 rounded-2xl border px-4 py-4 sm:top-4 sm:px-6">
         <div className="flex items-center justify-between gap-4">
           <div className="flex min-w-0 items-center gap-3">
-            <div className="bg-base border-line text-cyan flex h-11 w-11 items-center justify-center rounded-2xl border text-sm font-semibold">
+            <div className="bg-slate-950 border-slate-700 text-cyan-300 flex h-11 w-11 items-center justify-center rounded-2xl border text-sm font-semibold">
               CB
             </div>
             <div className="min-w-0">
-              <p className="truncate text-sm font-semibold text-foreground">
+              <p className="truncate text-sm font-semibold text-white">
                 Carlos David Burbano Cuchala
               </p>
-              <p className="hidden text-sm text-muted lg:block">
+              <p className="hidden text-sm text-gray-400 lg:block">
                 Frontend Developer
               </p>
             </div>
           </div>
 
-          <nav className="border-line bg-base hidden items-center gap-1 rounded-full border p-1 md:flex">
+          <nav className="border-slate-700 bg-slate-950 hidden items-center gap-1 rounded-full border p-1 md:flex">
             {navItems.map((item) => (
               <NavLink
                 key={item.href}
@@ -127,7 +127,7 @@ export default function TopNav() {
             <a
               href="#contacto"
               onClick={() => handleNavigate("#contacto")}
-              className="bg-accent inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-950"
+              className="bg-blue-500 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-950"
             >
               Hablemos
             </a>
@@ -139,7 +139,7 @@ export default function TopNav() {
             aria-controls="mobile-sidebar"
             aria-label="Abrir menu"
             onClick={() => setIsOpen((current) => !current)}
-            className="border-line bg-base flex h-11 w-11 items-center justify-center rounded-2xl border lg:hidden"
+            className="border-slate-700 bg-slate-950 flex h-11 w-11 items-center justify-center rounded-2xl border lg:hidden"
           >
             <span className="flex flex-col gap-1">
               <span className="bg-foreground block h-0.5 w-5 rounded-full" />
@@ -161,18 +161,18 @@ export default function TopNav() {
 
           <aside
             id="mobile-sidebar"
-            className="bg-surface border-line absolute right-0 top-0 flex h-full w-72 max-w-full flex-col border-l px-5 py-6 shadow-lg"
+            className="bg-slate-900 border-slate-700 absolute right-0 top-0 flex h-full w-72 max-w-full flex-col border-l px-5 py-6 shadow-lg"
           >
             <div className="flex items-center justify-between gap-4">
               <div>
-                <p className="text-sm font-semibold text-foreground">Menu</p>
-                <p className="text-sm text-muted">Frontend Developer</p>
+                <p className="text-sm font-semibold text-white">Menu</p>
+                <p className="text-sm text-gray-400">Frontend Developer</p>
               </div>
               <button
                 type="button"
                 aria-label="Cerrar sidebar"
                 onClick={() => setIsOpen(false)}
-                className="border-line bg-base text-foreground flex h-10 w-10 items-center justify-center rounded-2xl border text-lg"
+                className="border-slate-700 bg-slate-950 text-white flex h-10 w-10 items-center justify-center rounded-2xl border text-lg"
               >
                 X
               </button>
@@ -186,8 +186,8 @@ export default function TopNav() {
                   onClick={() => handleNavigate(item.href)}
                   className={
                     activeHref === item.href
-                      ? "bg-accent rounded-2xl px-4 py-3 text-sm font-semibold text-slate-950"
-                      : "bg-base border-line rounded-2xl border px-4 py-3 text-sm font-medium text-foreground"
+                      ? "bg-blue-500 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-950"
+                      : "bg-slate-950 border-slate-700 rounded-2xl border px-4 py-3 text-sm font-medium text-white"
                   }
                 >
                   {item.label}
@@ -198,16 +198,16 @@ export default function TopNav() {
             <a
               href="#contacto"
               onClick={() => handleNavigate("#contacto")}
-              className="bg-accent mt-6 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-950"
+              className="bg-blue-500 mt-6 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-950"
             >
               Hablemos
             </a>
 
-            <div className="border-line mt-auto rounded-2xl border p-4">
-              <p className="text-sm font-semibold text-foreground">
+            <div className="border-slate-700 mt-auto rounded-2xl border p-4">
+              <p className="text-sm font-semibold text-white">
                 Carlos David Burbano Cuchala
               </p>
-              <p className="mt-1 text-sm text-muted">
+              <p className="mt-1 text-sm text-gray-400">
                 Navegacion movil simple, alineada con el kit modular.
               </p>
             </div>

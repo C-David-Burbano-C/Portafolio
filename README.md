@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portafolio Modular
 
-## Getting Started
+Implementacion del portafolio en `Next.js 16`, `TypeScript` y `Tailwind CSS`, tomando como fuente el kit modular ubicado en `figma_layers/`.
 
-First, run the development server:
+## Requisitos
+
+- Node.js 20 o superior
+- npm
+
+## Ejecucion
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Levantar el entorno local:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir en navegador:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Validacion
 
-## Learn More
+Lint:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Build de produccion:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+## Estructura principal
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `app/page.tsx`: entrada de la ruta `/`
+- `app/layout.tsx`: layout raiz y metadata base
+- `app/globals.css`: tema global, tipografia y tokens simples
+- `app/_components/portfolio/page_modular.tsx`: ensamblador de la pagina
+- `app/_components/portfolio/`: secciones del portafolio
+- `app/_components/portfolio/projects/`: base de tarjetas y 5 proyectos
+- `public/images/`: imagenes reales conectadas a la interfaz
+- `figma_layers/`: material fuente usado para replicar el kit
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Mapa de componentes
+
+### Ensamblador
+
+- `page_modular.tsx`
+  - Renderiza el flujo completo de la home
+  - Orden actual: `TopNav`, `HeroSection`, `AboutSection`, `SkillsSection`, `SectionBand`, `ProjectCardsAll`, `ExperienceSection`, `ContactPanel`
+
+### Navegacion
+
+- `top_nav.tsx`
+  - Navbar responsive
+  - Menu desktop centrado
+  - Sidebar simple para mobile
+
+### Bloques principales
+
+- `hero_section.tsx`
+  - Titulo principal, rol, CTA y señal visual del hero
+
+- `about_section.tsx`
+  - Presentacion personal y foto de perfil
+
+- `skills_section.tsx`
+  - Tres bloques de habilidades
+
+- `section_band.tsx`
+  - Banda reutilizable para encabezados de seccion
+
+- `experience_section.tsx`
+  - Timeline vertical de experiencia
+
+- `contact_panel.tsx`
+  - CTA, datos de contacto y placeholders visuales de formulario
+
+### Portafolio
+
+- `projects/project_card_base.tsx`
+  - Base reutilizable para cada tarjeta
+  - Renderiza imagen, resumen, stack y links externos
+
+- `projects/project_cards_all.tsx`
+  - Grilla responsive de proyectos
+
+- `projects/project_multivariable.tsx`
+- `projects/project_lumpymed.tsx`
+- `projects/project_integracion_continua.tsx`
+- `projects/project_labwise.tsx`
+- `projects/project_battery_life_estimator.tsx`
+  - Cada archivo define el contenido de una tarjeta individual
+
+## Notas de handoff
+
+- Las imagenes publicas estan en `public/images`.
+- Los enlaces externos de proyectos y contacto ya estan activos.
+- `figma_layers/` se conserva como referencia y no participa en lint ni build.
+- Hay un cambio local no versionado en `.gitignore` que no forma parte de los commits del portafolio.
