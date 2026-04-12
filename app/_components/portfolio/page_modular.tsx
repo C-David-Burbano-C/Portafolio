@@ -10,16 +10,16 @@ import ProjectCardsAll from "./projects/project_cards_all";
 export default function PortfolioModularPage() {
   return (
     <main className="bg-base text-foreground min-h-screen">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-4 sm:gap-8 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
         <TopNav />
         <HeroSection />
 
-        <section className="flex flex-col gap-6">
+        <section className="flex flex-col gap-5 sm:gap-6">
           <AboutSection />
           <SkillsSection />
         </section>
 
-        <section id="portafolio" className="flex flex-col gap-6">
+        <section id="portafolio" className="flex flex-col gap-5 sm:gap-6">
           <SectionBand title="Portafolio" showBottomBar />
           <ProjectCardsAll />
         </section>

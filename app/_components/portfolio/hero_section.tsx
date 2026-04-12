@@ -28,18 +28,18 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="bg-surface rounded-3xl border border-line px-5 py-8 sm:px-8 sm:py-10 lg:px-10"
+      className="bg-surface rounded-3xl border border-line px-4 py-7 sm:px-8 sm:py-10 lg:px-10"
     >
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
+      <div className="grid grid-cols-[1.4fr_0.8fr] gap-4 sm:gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center lg:gap-10">
         <div className="space-y-4">
           <p className="text-cyan text-sm font-medium uppercase tracking-[0.2em]">
             Inicio
           </p>
-          <h1 className="font-display text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:max-w-xl lg:text-6xl">
+          <h1 className="font-display text-3xl font-semibold leading-tight text-foreground sm:text-5xl lg:max-w-xl lg:text-6xl">
             Innovo sin miedo: convierto ideas en productos reales.
           </h1>
-          <p className="text-lg text-muted sm:text-2xl">Frontend Developer</p>
-          <p className="max-w-2xl text-sm leading-7 text-muted sm:text-base">
+          <p className="text-base text-muted sm:text-2xl">Frontend Developer</p>
+          <p className="max-w-2xl text-sm leading-6 text-muted sm:text-base sm:leading-7">
             Frontend Developer en formacion en la Universidad Cooperativa de
             Colombia (Pasto), con experiencia en desarrollo web y bases de datos
             con TypeScript, Angular, Python, Java, SQL, Django y PostgreSQL.
@@ -52,7 +52,7 @@ export default function HeroSection() {
             Contactame
           </a>
 
-          <div className="flex flex-wrap gap-3 pt-2">
+          <div className="flex flex-wrap gap-2 pt-1 sm:gap-3 sm:pt-2">
             {highlights.map((item) => (
               item.href ? (
                 <a
@@ -60,14 +60,14 @@ export default function HeroSection() {
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="border-line text-muted rounded-full border px-3 py-2 text-xs sm:text-sm"
+                  className="border-line text-muted rounded-full border px-3 py-2 text-[11px] sm:text-sm"
                 >
                   {item.label}
                 </a>
               ) : (
                 <span
                   key={item.label}
-                  className="border-line text-muted rounded-full border px-3 py-2 text-xs sm:text-sm"
+                  className="border-line text-muted rounded-full border px-3 py-2 text-[11px] sm:text-sm"
                 >
                   {item.label}
                 </span>
@@ -76,7 +76,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center md:justify-end">
+        <div className="flex items-start justify-end self-start md:items-center">
           <HeroSignal />
         </div>
       </div>

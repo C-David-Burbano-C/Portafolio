@@ -42,7 +42,7 @@ export default function ContactPanel() {
       <div className="bg-cyan absolute -left-10 -top-12 h-32 w-32 rounded-full opacity-10 blur-3xl" />
       <div className="bg-accent absolute -right-10 -top-10 h-28 w-28 rounded-full opacity-10 blur-3xl" />
 
-      <div className="relative grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+      <div className="relative grid gap-6 sm:gap-8 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="space-y-4">
           <p className="text-cyan text-sm font-medium uppercase tracking-[0.2em]">
             Contact
@@ -81,9 +81,15 @@ export default function ContactPanel() {
         </div>
 
         <div className="space-y-4">
-          <ContactField label="Nombre" />
-          <ContactField label="Correo" />
-          <ContactField label="Mensaje" tall />
+          <div className="hidden sm:block">
+            <ContactField label="Nombre" />
+          </div>
+          <div className="hidden sm:block">
+            <ContactField label="Correo" />
+          </div>
+          <div className="hidden sm:block">
+            <ContactField label="Mensaje" tall />
+          </div>
           <div className="border-line rounded-2xl border border-dashed p-4 text-center text-xs uppercase tracking-[0.2em] text-muted sm:hidden">
             Formulario compacto
           </div>

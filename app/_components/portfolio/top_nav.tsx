@@ -27,8 +27,8 @@ function NavLink({
       onClick={onNavigate}
       className={
         active
-          ? "bg-accent text-slate-950 rounded-full px-4 py-2 text-sm font-semibold"
-          : "text-muted rounded-full px-4 py-2 text-sm font-medium"
+          ? "bg-accent rounded-full px-4 py-2 text-sm font-semibold text-slate-950"
+          : "rounded-full px-4 py-2 text-sm font-medium text-muted"
       }
     >
       {label}
@@ -62,7 +62,7 @@ export default function TopNav() {
       return;
     }
 
-    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
     const handleChange = (event: MediaQueryListEvent) => {
       if (event.matches) {
         setIsOpen(false);
@@ -95,7 +95,7 @@ export default function TopNav() {
 
   return (
     <>
-      <header className="bg-surface border-line sticky top-4 z-40 rounded-2xl border px-4 py-4 sm:px-6">
+      <header className="bg-surface border-line sticky top-3 z-40 rounded-2xl border px-4 py-4 sm:top-4 sm:px-6">
         <div className="flex items-center justify-between gap-4">
           <div className="flex min-w-0 items-center gap-3">
             <div className="bg-base border-line text-cyan flex h-11 w-11 items-center justify-center rounded-2xl border text-sm font-semibold">
@@ -105,7 +105,7 @@ export default function TopNav() {
               <p className="truncate text-sm font-semibold text-foreground">
                 Carlos David Burbano Cuchala
               </p>
-              <p className="text-muted hidden text-sm md:block">
+              <p className="hidden text-sm text-muted lg:block">
                 Frontend Developer
               </p>
             </div>
@@ -123,7 +123,7 @@ export default function TopNav() {
             ))}
           </nav>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <a
               href="#contacto"
               onClick={() => handleNavigate("#contacto")}
@@ -139,7 +139,7 @@ export default function TopNav() {
             aria-controls="mobile-sidebar"
             aria-label="Abrir menu"
             onClick={() => setIsOpen((current) => !current)}
-            className="border-line bg-base flex h-11 w-11 items-center justify-center rounded-2xl border md:hidden"
+            className="border-line bg-base flex h-11 w-11 items-center justify-center rounded-2xl border lg:hidden"
           >
             <span className="flex flex-col gap-1">
               <span className="bg-foreground block h-0.5 w-5 rounded-full" />
@@ -151,7 +151,7 @@ export default function TopNav() {
       </header>
 
       {isOpen ? (
-        <div className="fixed inset-0 z-50 md:hidden">
+        <div className="fixed inset-0 z-50 lg:hidden">
           <button
             type="button"
             aria-label="Cerrar menu"
@@ -161,12 +161,12 @@ export default function TopNav() {
 
           <aside
             id="mobile-sidebar"
-            className="bg-surface border-line absolute right-0 top-0 flex h-full w-72 flex-col border-l px-5 py-6 shadow-lg"
+            className="bg-surface border-line absolute right-0 top-0 flex h-full w-72 max-w-full flex-col border-l px-5 py-6 shadow-lg"
           >
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold text-foreground">Menu</p>
-                <p className="text-muted text-sm">Frontend Developer</p>
+                <p className="text-sm text-muted">Frontend Developer</p>
               </div>
               <button
                 type="button"
@@ -174,7 +174,7 @@ export default function TopNav() {
                 onClick={() => setIsOpen(false)}
                 className="border-line bg-base text-foreground flex h-10 w-10 items-center justify-center rounded-2xl border text-lg"
               >
-                ×
+                X
               </button>
             </div>
 
@@ -187,7 +187,7 @@ export default function TopNav() {
                   className={
                     activeHref === item.href
                       ? "bg-accent rounded-2xl px-4 py-3 text-sm font-semibold text-slate-950"
-                      : "bg-base text-foreground border-line rounded-2xl border px-4 py-3 text-sm font-medium"
+                      : "bg-base border-line rounded-2xl border px-4 py-3 text-sm font-medium text-foreground"
                   }
                 >
                   {item.label}
@@ -207,7 +207,7 @@ export default function TopNav() {
               <p className="text-sm font-semibold text-foreground">
                 Carlos David Burbano Cuchala
               </p>
-              <p className="text-muted mt-1 text-sm">
+              <p className="mt-1 text-sm text-muted">
                 Navegacion movil simple, alineada con el kit modular.
               </p>
             </div>

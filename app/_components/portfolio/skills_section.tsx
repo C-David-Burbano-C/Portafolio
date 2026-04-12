@@ -28,13 +28,13 @@ export default function SkillsSection() {
         </h2>
       </div>
 
-      <div className="mt-6 grid grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+      <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-4 lg:gap-6">
         {skills.map((skill) => (
           <article
             key={skill.title}
-            className="bg-surface border-line flex min-h-28 flex-col justify-between rounded-3xl border p-4 sm:min-h-36 sm:p-5 lg:min-h-48 lg:p-6"
+            className="bg-surface border-line flex min-h-24 flex-col justify-between rounded-3xl border p-3 sm:min-h-36 sm:p-5 lg:min-h-48 lg:p-6"
           >
-            <h3 className="font-display text-sm font-semibold text-foreground sm:text-lg lg:text-2xl">
+            <h3 className="font-display text-xs font-semibold text-foreground sm:text-lg lg:text-2xl">
               {skill.title}
             </h3>
             <p className="mt-3 hidden text-sm leading-6 text-muted sm:block">
