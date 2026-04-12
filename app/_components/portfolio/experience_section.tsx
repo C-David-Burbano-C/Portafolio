@@ -14,7 +14,7 @@ function ExperienceItem({
   description: string;
 }) {
   return (
-    <article className="relative ml-4 rounded-3xl border border-white/70 bg-[linear-gradient(160deg,rgba(255,255,255,0.95)_0%,rgba(241,245,249,0.9)_100%)] p-4 shadow-[0_18px_46px_-34px_rgba(15,23,42,0.3)] dark:border-slate-800 dark:bg-none dark:bg-slate-950 sm:ml-6 sm:p-6">
+    <article className="relative ml-4 rounded-3xl border border-white/70 bg-gradient-to-br from-white to-slate-100 p-4 shadow-[0_18px_46px_-34px_rgba(15,23,42,0.3)] dark:border-slate-800 dark:bg-none dark:bg-slate-950 sm:ml-6 sm:p-6">
       <div className="bg-cyan-500 absolute -left-4 top-7 h-3 w-3 rounded-full shadow-md sm:-left-6 sm:h-4 sm:w-4" />
       <h4 className="font-display text-lg font-semibold text-slate-900 dark:text-white sm:text-2xl">
         {title}
@@ -92,7 +92,7 @@ export default function ExperienceSection() {
 
   return (
     <section id="experiencia" className="scroll-mt-24 flex flex-col gap-5 sm:gap-6">
-      <div className="relative overflow-hidden rounded-3xl border border-white/65 bg-[linear-gradient(135deg,rgba(255,255,255,0.92)_0%,rgba(224,242,254,0.82)_100%)] px-5 py-5 shadow-[0_18px_50px_-34px_rgba(14,116,144,0.3)] dark:border-slate-800 dark:bg-none dark:bg-gradient-to-r dark:from-teal-950 dark:via-slate-900 dark:to-slate-800 sm:px-6 sm:py-7">
+      <div className="relative overflow-hidden rounded-3xl border border-white/65 bg-gradient-to-br from-white to-sky-100 px-5 py-5 shadow-[0_18px_50px_-34px_rgba(14,116,144,0.3)] dark:border-slate-800 dark:bg-none dark:bg-gradient-to-r dark:from-teal-950 dark:via-slate-900 dark:to-slate-800 sm:px-6 sm:py-7">
         <div className="bg-cyan-500 absolute -left-10 -top-10 h-28 w-28 rounded-full opacity-20 blur-3xl" />
         <div className="bg-sky-500 absolute -right-10 -top-8 h-24 w-24 rounded-full opacity-20 blur-3xl" />
         <div className="relative flex flex-col items-center gap-4 text-center">

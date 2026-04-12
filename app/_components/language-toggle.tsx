@@ -35,7 +35,7 @@ export default function LanguageToggle() {
     <button
       type="button"
       onClick={toggleLanguage}
-      className="inline-flex items-center gap-2 rounded-full border-2 border-sky-100 bg-[linear-gradient(135deg,#ffffff_0%,#e0f2fe_100%)] px-3 py-2 text-slate-900 shadow-sm transition-colors hover:border-sky-200 hover:bg-sky-50 dark:border-slate-800 dark:bg-none dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
+      className="inline-flex items-center gap-2 rounded-full border-2 border-sky-100 bg-gradient-to-br from-white to-sky-100 px-3 py-2 text-slate-900 shadow-sm transition-colors hover:border-sky-200 hover:bg-sky-50 dark:border-slate-800 dark:bg-none dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
       aria-label={copy.aria}
       title={copy.title}
     >

@@ -46,7 +46,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="rounded-full border-2 border-sky-100 bg-[linear-gradient(135deg,#ffffff_0%,#e0f2fe_100%)] p-2 text-slate-900 shadow-sm transition-colors hover:border-sky-200 hover:bg-sky-50 dark:border-slate-800 dark:bg-none dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
+      className="rounded-full border-2 border-sky-100 bg-gradient-to-br from-white to-sky-100 p-2 text-slate-900 shadow-sm transition-colors hover:border-sky-200 hover:bg-sky-50 dark:border-slate-800 dark:bg-none dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
       title={theme === "dark" ? copy.light : copy.dark}
       aria-label={copy.aria}
     >

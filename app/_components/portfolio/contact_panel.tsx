@@ -81,7 +81,7 @@ export default function ContactPanel() {
   return (
     <section
       id="contacto"
-      className="scroll-mt-24 relative overflow-hidden rounded-3xl border border-white/65 bg-[linear-gradient(145deg,rgba(255,255,255,0.94)_0%,rgba(239,246,255,0.88)_50%,rgba(238,242,255,0.88)_100%)] px-5 py-6 shadow-[0_22px_60px_-36px_rgba(37,99,235,0.3)] backdrop-blur-sm dark:border-slate-800 dark:bg-none dark:bg-slate-950 sm:px-8 sm:py-8"
+      className="scroll-mt-24 relative overflow-hidden rounded-3xl border border-white/65 bg-gradient-to-br from-white via-sky-50 to-indigo-50 px-5 py-6 shadow-[0_22px_60px_-36px_rgba(37,99,235,0.3)] backdrop-blur-sm dark:border-slate-800 dark:bg-none dark:bg-slate-950 sm:px-8 sm:py-8"
     >
       <div className="bg-cyan-500 absolute -left-10 -top-12 h-32 w-32 rounded-full opacity-20 blur-3xl" />
       <div className="bg-sky-500 absolute -right-10 -top-10 h-28 w-28 rounded-full opacity-20 blur-3xl" />

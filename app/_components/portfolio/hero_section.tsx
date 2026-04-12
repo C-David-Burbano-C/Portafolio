@@ -19,43 +19,43 @@ function HeroSignal({
       aria-label={alt}
       className="relative h-36 w-36 sm:h-48 sm:w-48 lg:h-64 lg:w-64"
     >
-      <div className="absolute inset-[16%] rounded-full bg-sky-300/10 blur-2xl dark:bg-sky-400/10" />
-      <div className="absolute inset-0 rounded-full border border-white/15 dark:border-white/8" />
-      <div className="absolute inset-[14%] rounded-full border border-sky-300/25 dark:border-sky-400/30" />
-      <div className="absolute inset-[28%] rounded-full border border-sky-400/25 dark:border-sky-500/30" />
+      <div className="absolute inset-[16%] rounded-full bg-sky-400/20 blur-2xl dark:bg-sky-400/10" />
+      <div className="absolute inset-0 rounded-full border border-slate-400/35 dark:border-white/8" />
+      <div className="absolute inset-[14%] rounded-full border border-sky-500/40 dark:border-sky-400/30" />
+      <div className="absolute inset-[28%] rounded-full border border-sky-600/35 dark:border-sky-500/30" />
 
       <div className="absolute inset-[9%] motion-safe:animate-[spin_18s_linear_infinite]">
         <div className="absolute left-1/2 top-[3%] -translate-x-1/2">
-          <div className="rounded-full border border-sky-300/30 bg-slate-950/90 px-3 py-1 text-[9px] font-semibold text-slate-200 shadow-lg shadow-slate-950/25 motion-safe:animate-[spin_18s_linear_infinite] motion-safe:[animation-direction:reverse] sm:text-[10px]">
+          <div className="rounded-full border border-sky-400/40 bg-white/90 px-3 py-1 text-[9px] font-semibold text-slate-700 shadow-lg shadow-sky-500/10 motion-safe:animate-[spin_18s_linear_infinite] motion-safe:[animation-direction:reverse] dark:border-sky-300/30 dark:bg-slate-950/90 dark:text-slate-200 dark:shadow-slate-950/25 sm:text-[10px]">
             {labels.ui}
           </div>
         </div>
 
         <div className="absolute right-[1%] top-1/2 -translate-y-1/2">
-          <div className="rounded-full border border-sky-300/30 bg-slate-950/90 px-3 py-1 text-[9px] font-semibold text-slate-200 shadow-lg shadow-slate-950/25 motion-safe:animate-[spin_18s_linear_infinite] motion-safe:[animation-direction:reverse] sm:text-[10px]">
+          <div className="rounded-full border border-sky-400/40 bg-white/90 px-3 py-1 text-[9px] font-semibold text-slate-700 shadow-lg shadow-sky-500/10 motion-safe:animate-[spin_18s_linear_infinite] motion-safe:[animation-direction:reverse] dark:border-sky-300/30 dark:bg-slate-950/90 dark:text-slate-200 dark:shadow-slate-950/25 sm:text-[10px]">
             {labels.web}
           </div>
         </div>
 
         <div className="absolute bottom-[3%] left-1/2 -translate-x-1/2">
-          <div className="rounded-full border border-sky-300/30 bg-slate-950/90 px-3 py-1 text-[9px] font-semibold text-slate-200 shadow-lg shadow-slate-950/25 motion-safe:animate-[spin_18s_linear_infinite] motion-safe:[animation-direction:reverse] sm:text-[10px]">
+          <div className="rounded-full border border-sky-400/40 bg-white/90 px-3 py-1 text-[9px] font-semibold text-slate-700 shadow-lg shadow-sky-500/10 motion-safe:animate-[spin_18s_linear_infinite] motion-safe:[animation-direction:reverse] dark:border-sky-300/30 dark:bg-slate-950/90 dark:text-slate-200 dark:shadow-slate-950/25 sm:text-[10px]">
             {labels.code}
           </div>
         </div>
       </div>
 
       <div className="absolute inset-[27%] motion-safe:animate-[spin_11s_linear_infinite] motion-safe:[animation-direction:reverse]">
-        <div className="absolute bottom-[2%] right-[14%] h-3.5 w-3.5 rounded-full bg-sky-400 shadow-[0_0_18px_rgba(56,189,248,0.8)] sm:h-4 sm:w-4" />
+        <div className="absolute bottom-[2%] right-[14%] h-3.5 w-3.5 rounded-full bg-sky-500 shadow-[0_0_18px_rgba(14,165,233,0.55)] dark:bg-sky-400 dark:shadow-[0_0_18px_rgba(56,189,248,0.8)] sm:h-4 sm:w-4" />
       </div>
 
       <div className="absolute inset-0 motion-safe:animate-[spin_24s_linear_infinite]">
-        <div className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-200 shadow-[0_0_14px_rgba(186,230,253,0.75)] sm:h-3 sm:w-3" />
+        <div className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-500 shadow-[0_0_14px_rgba(14,165,233,0.45)] dark:bg-sky-200 dark:shadow-[0_0_14px_rgba(186,230,253,0.75)] sm:h-3 sm:w-3" />
       </div>
 
-      <div className="absolute left-1/2 top-1/2 flex h-[34%] w-[34%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[30%] border border-sky-300/30 bg-slate-900 shadow-[0_18px_40px_-18px_rgba(8,15,29,0.9)]">
-        <div className="absolute inset-[14%] rounded-[28%] bg-gradient-to-br from-sky-300/70 via-sky-400/45 to-sky-600/35" />
-        <div className="absolute inset-0 rounded-[30%] bg-sky-200/10 blur-xl" />
-        <span className="relative text-lg font-semibold text-white sm:text-2xl">CB</span>
+      <div className="absolute left-1/2 top-1/2 flex h-[34%] w-[34%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[30%] border border-sky-500/35 bg-white/80 shadow-[0_18px_40px_-18px_rgba(14,116,144,0.35)] dark:border-sky-300/30 dark:bg-slate-900 dark:shadow-[0_18px_40px_-18px_rgba(8,15,29,0.9)]">
+        <div className="absolute inset-[14%] rounded-[28%] bg-gradient-to-br from-sky-200 via-sky-300/80 to-sky-500/55 dark:from-sky-300/70 dark:via-sky-400/45 dark:to-sky-600/35" />
+        <div className="absolute inset-0 rounded-[30%] bg-sky-300/15 blur-xl dark:bg-sky-200/10" />
+        <span className="relative text-lg font-semibold text-sky-950 dark:text-white sm:text-2xl">CB</span>
       </div>
     </div>
   );
@@ -106,7 +106,7 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="scroll-mt-24 relative overflow-hidden rounded-3xl border border-white/65 bg-[linear-gradient(135deg,rgba(255,255,255,0.94)_0%,rgba(239,246,255,0.9)_52%,rgba(238,242,255,0.88)_100%)] px-4 py-7 shadow-[0_22px_60px_-34px_rgba(37,99,235,0.35)] backdrop-blur-sm dark:border-slate-800 dark:bg-none dark:bg-gradient-to-r dark:from-teal-950/50 dark:via-slate-950 dark:to-slate-900 sm:px-8 sm:py-10 lg:px-10"
+      className="scroll-mt-24 relative overflow-hidden rounded-3xl border border-white/65 bg-gradient-to-br from-white via-sky-50 to-indigo-50 px-4 py-7 shadow-[0_22px_60px_-34px_rgba(37,99,235,0.35)] backdrop-blur-sm dark:border-slate-800 dark:bg-none dark:bg-gradient-to-r dark:from-teal-950/50 dark:via-slate-950 dark:to-slate-900 sm:px-8 sm:py-10 lg:px-10"
     >
       <div className="absolute -left-10 top-0 h-32 w-32 rounded-full bg-cyan-400 opacity-30 blur-3xl dark:bg-cyan-400 dark:opacity-10 sm:h-40 sm:w-40" />
       <div className="absolute -right-8 bottom-4 h-36 w-36 rounded-full bg-violet-400 opacity-25 blur-3xl dark:bg-sky-400 dark:opacity-10 sm:h-44 sm:w-44" />

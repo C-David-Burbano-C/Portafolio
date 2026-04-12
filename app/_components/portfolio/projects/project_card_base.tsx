@@ -38,7 +38,7 @@ export default function ProjectCardBase({
   });
 
   return (
-    <article className="flex h-full flex-col rounded-3xl border border-white/70 bg-[linear-gradient(160deg,rgba(255,255,255,0.95)_0%,rgba(239,246,255,0.86)_100%)] p-4 shadow-[0_18px_48px_-34px_rgba(15,23,42,0.3)] backdrop-blur-sm dark:border-slate-800 dark:bg-none dark:bg-slate-950 sm:p-5">
+    <article className="flex h-full flex-col rounded-3xl border border-white/70 bg-gradient-to-br from-white to-sky-50 p-4 shadow-[0_18px_48px_-34px_rgba(15,23,42,0.3)] backdrop-blur-sm dark:border-slate-800 dark:bg-none dark:bg-slate-950 sm:p-5">
       <div className="relative h-48 overflow-hidden rounded-2xl border border-white/75 bg-white/75 dark:border-slate-800 dark:bg-slate-950 sm:h-44">
         <Image
           src={imageSrc}

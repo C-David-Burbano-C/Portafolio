@@ -63,7 +63,7 @@ export default function SkillsSection() {
         {copy.skills.map((skill) => (
           <article
             key={skill.title}
-            className="relative flex min-h-24 flex-col justify-between overflow-hidden rounded-3xl border border-white/70 bg-[linear-gradient(160deg,rgba(255,255,255,0.95)_0%,rgba(239,246,255,0.88)_100%)] p-3 shadow-[0_18px_40px_-30px_rgba(37,99,235,0.32)] backdrop-blur-sm dark:border-slate-800 dark:bg-none dark:bg-slate-950 sm:min-h-36 sm:p-5 lg:min-h-48 lg:p-6"
+            className="relative flex min-h-24 flex-col justify-between overflow-hidden rounded-3xl border border-white/70 bg-gradient-to-br from-white to-sky-50 p-3 shadow-[0_18px_40px_-30px_rgba(37,99,235,0.32)] backdrop-blur-sm dark:border-slate-800 dark:bg-none dark:bg-slate-950 sm:min-h-36 sm:p-5 lg:min-h-48 lg:p-6"
           >
             <div className={`${skill.tone} absolute right-0 top-0 h-16 w-16 rounded-full opacity-25 blur-2xl`} />
             <div className={`${skill.tone} mb-4 h-1.5 w-12 rounded-full`} />

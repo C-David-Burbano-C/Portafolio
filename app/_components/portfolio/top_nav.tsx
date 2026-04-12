@@ -129,7 +129,7 @@ export default function TopNav() {
       <header className="sticky top-3 z-40 rounded-2xl border border-white/65 bg-white/70 px-4 py-4 shadow-[0_18px_50px_-28px_rgba(15,23,42,0.32)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/95 sm:top-4 sm:px-6">
         <div className="flex items-center justify-between gap-4">
           <div className="flex min-w-0 items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-sky-100 bg-[linear-gradient(135deg,#ffffff_0%,#e0f2fe_100%)] text-sm font-semibold text-sky-700 shadow-sm dark:border-sky-900/50 dark:bg-none dark:bg-slate-900 dark:text-sky-300">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-sky-100 bg-gradient-to-br from-white to-sky-100 text-sm font-semibold text-sky-700 shadow-sm dark:border-sky-900/50 dark:bg-none dark:bg-slate-900 dark:text-sky-300">
               CB
             </div>
             <div className="min-w-0">
@@ -197,7 +197,7 @@ export default function TopNav() {
 
           <aside
             id="mobile-sidebar"
-            className="absolute right-0 top-0 flex h-full w-72 max-w-full flex-col border-l border-white/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(239,246,255,0.96)_100%)] px-5 py-6 shadow-2xl backdrop-blur-xl dark:border-slate-800 dark:bg-none dark:bg-gradient-to-r dark:from-slate-950 dark:to-slate-900"
+            className="absolute right-0 top-0 flex h-full w-72 max-w-full flex-col border-l border-white/60 bg-gradient-to-b from-white to-sky-50 px-5 py-6 shadow-2xl backdrop-blur-xl dark:border-slate-800 dark:bg-none dark:bg-gradient-to-r dark:from-slate-950 dark:to-slate-900"
           >
             <div className="flex items-center justify-between gap-4">
               <div>
