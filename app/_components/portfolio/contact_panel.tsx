@@ -45,16 +45,16 @@ export default function ContactPanel() {
 
       <div className="relative grid gap-6 sm:gap-8 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="space-y-4">
-          <p className="text-cyan text-sm font-medium uppercase tracking-[0.2em]">
+          <p className="text-cyan-200 text-sm font-medium uppercase tracking-[0.2em]">
             Contact
           </p>
-          <h2 className="font-display text-3xl font-semibold text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="font-display text-3xl font-semibold text-slate-50 sm:text-4xl lg:text-5xl">
             Contacto
           </h2>
-          <p className="text-sm leading-7 text-muted sm:text-lg">
+          <p className="text-sm leading-7 text-slate-200 sm:text-lg">
             Disponible para colaborar en proyectos web y frontend.
           </p>
-          <p className="text-sm leading-7 text-muted sm:text-lg">
+          <p className="text-sm leading-7 text-slate-200 sm:text-lg">
             Si tienes una idea, la convertimos en una solucion funcional.
           </p>
 
@@ -69,9 +69,9 @@ export default function ContactPanel() {
             {contactPeople.map((person) => (
               <div
                 key={person.email}
-                className="border-line bg-base/80 rounded-2xl border p-4 text-sm text-muted"
+                className="border-line bg-base/80 rounded-2xl border p-4 text-sm text-slate-200"
               >
-                <p className="font-semibold text-foreground">{person.name}</p>
+                <p className="font-semibold text-slate-50">{person.name}</p>
                 <a href={`tel:${person.phone.replace(/\s+/g, "")}`} className="block">
                   {person.phone}
                 </a>

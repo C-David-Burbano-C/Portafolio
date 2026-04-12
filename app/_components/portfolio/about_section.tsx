@@ -26,10 +26,10 @@ export default function AboutSection() {
 
       <div className="relative grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3 lg:items-center">
         <div>
-          <p className="text-cyan text-sm font-medium uppercase tracking-[0.2em]">
+          <p className="text-cyan-200 text-sm font-medium uppercase tracking-[0.2em]">
             About
           </p>
-          <h2 className="font-display mt-2 text-3xl font-semibold text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="font-display mt-2 text-3xl font-semibold text-slate-50 sm:text-4xl lg:text-5xl">
             Sobre Mi
           </h2>
         </div>
@@ -39,11 +39,11 @@ export default function AboutSection() {
         </div>
 
         <div className="col-span-2 lg:col-span-1">
-          <p className="text-sm leading-6 text-muted sm:text-base sm:leading-7 lg:text-lg">
+          <p className="text-sm leading-6 text-slate-200 sm:text-base sm:leading-7 lg:text-lg">
             Inicie en soporte y mantenimiento, fortaleciendo mi pensamiento
             analitico en hardware, redes y resolucion de problemas.
           </p>
-          <p className="mt-3 text-sm leading-6 text-muted sm:text-base sm:leading-7 lg:text-lg">
+          <p className="mt-3 text-sm leading-6 text-slate-200 sm:text-base sm:leading-7 lg:text-lg">
             Hoy desarrollo productos web, combinando programacion, diseno y
             electronica, con enfoque en soluciones reales y mejora continua.
           </p>
