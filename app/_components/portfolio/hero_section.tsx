@@ -1,19 +1,62 @@
 "use client";
 
-import Image from "next/image";
 import { useLanguageValue } from "../../language";
 
-function HeroSignal({ alt }: { alt: string }) {
+function HeroSignal({
+  alt,
+  labels,
+}: {
+  alt: string;
+  labels: {
+    ui: string;
+    web: string;
+    code: string;
+  };
+}) {
   return (
-    <div className="relative h-36 w-36 sm:h-48 sm:w-48 lg:h-64 lg:w-64">
-      <Image
-        src="/images/hero_signal.svg"
-        alt={alt}
-        fill
-        sizes="(min-width: 1024px) 256px, (min-width: 640px) 192px, 144px"
-        className="object-contain"
-        priority
-      />
+    <div
+      role="img"
+      aria-label={alt}
+      className="relative h-36 w-36 sm:h-48 sm:w-48 lg:h-64 lg:w-64"
+    >
+      <div className="absolute inset-[16%] rounded-full bg-sky-300/10 blur-2xl dark:bg-sky-400/10" />
+      <div className="absolute inset-0 rounded-full border border-white/15 dark:border-white/8" />
+      <div className="absolute inset-[14%] rounded-full border border-sky-300/25 dark:border-sky-400/30" />
+      <div className="absolute inset-[28%] rounded-full border border-sky-400/25 dark:border-sky-500/30" />
+
+      <div className="absolute inset-[9%] motion-safe:animate-[spin_18s_linear_infinite]">
+        <div className="absolute left-1/2 top-[3%] -translate-x-1/2">
+          <div className="rounded-full border border-sky-300/30 bg-slate-950/90 px-3 py-1 text-[9px] font-semibold text-slate-200 shadow-lg shadow-slate-950/25 motion-safe:animate-[spin_18s_linear_infinite] motion-safe:[animation-direction:reverse] sm:text-[10px]">
+            {labels.ui}
+          </div>
+        </div>
+
+        <div className="absolute right-[1%] top-1/2 -translate-y-1/2">
+          <div className="rounded-full border border-sky-300/30 bg-slate-950/90 px-3 py-1 text-[9px] font-semibold text-slate-200 shadow-lg shadow-slate-950/25 motion-safe:animate-[spin_18s_linear_infinite] motion-safe:[animation-direction:reverse] sm:text-[10px]">
+            {labels.web}
+          </div>
+        </div>
+
+        <div className="absolute bottom-[3%] left-1/2 -translate-x-1/2">
+          <div className="rounded-full border border-sky-300/30 bg-slate-950/90 px-3 py-1 text-[9px] font-semibold text-slate-200 shadow-lg shadow-slate-950/25 motion-safe:animate-[spin_18s_linear_infinite] motion-safe:[animation-direction:reverse] sm:text-[10px]">
+            {labels.code}
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute inset-[27%] motion-safe:animate-[spin_11s_linear_infinite] motion-safe:[animation-direction:reverse]">
+        <div className="absolute bottom-[2%] right-[14%] h-3.5 w-3.5 rounded-full bg-sky-400 shadow-[0_0_18px_rgba(56,189,248,0.8)] sm:h-4 sm:w-4" />
+      </div>
+
+      <div className="absolute inset-0 motion-safe:animate-[spin_24s_linear_infinite]">
+        <div className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-200 shadow-[0_0_14px_rgba(186,230,253,0.75)] sm:h-3 sm:w-3" />
+      </div>
+
+      <div className="absolute left-1/2 top-1/2 flex h-[34%] w-[34%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[30%] border border-sky-300/30 bg-slate-900 shadow-[0_18px_40px_-18px_rgba(8,15,29,0.9)]">
+        <div className="absolute inset-[14%] rounded-[28%] bg-gradient-to-br from-sky-300/70 via-sky-400/45 to-sky-600/35" />
+        <div className="absolute inset-0 rounded-[30%] bg-sky-200/10 blur-xl" />
+        <span className="relative text-lg font-semibold text-white sm:text-2xl">CB</span>
+      </div>
     </div>
   );
 }
@@ -28,6 +71,11 @@ export default function HeroSection() {
         "Frontend Developer en formacion en la Universidad Cooperativa de Colombia (Pasto), con experiencia en desarrollo web y bases de datos con TypeScript, Angular, Python, Java, SQL, Django y PostgreSQL.",
       cta: "Contactame",
       heroAlt: "Visual del hero",
+      orbitLabels: {
+        ui: "UI",
+        web: "Web",
+        code: "Code",
+      },
       highlights: [
         { label: "GitHub: C-David-Burbano-C", href: "https://github.com/C-David-Burbano-C" },
         { label: "UCC Pasto" },
@@ -42,6 +90,11 @@ export default function HeroSection() {
         "Frontend developer in training at Universidad Cooperativa de Colombia (Pasto), with experience in web development and databases using TypeScript, Angular, Python, Java, SQL, Django, and PostgreSQL.",
       cta: "Contact me",
       heroAlt: "Hero visual",
+      orbitLabels: {
+        ui: "UI",
+        web: "Web",
+        code: "Code",
+      },
       highlights: [
         { label: "GitHub: C-David-Burbano-C", href: "https://github.com/C-David-Burbano-C" },
         { label: "UCC Pasto" },
@@ -104,8 +157,8 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="flex justify-center md:justify-end md:self-start md:items-center">
-          <HeroSignal alt={copy.heroAlt} />
+        <div className="flex justify-center md:justify-end md:self-center md:items-center">
+          <HeroSignal alt={copy.heroAlt} labels={copy.orbitLabels} />
         </div>
       </div>
     </section>
