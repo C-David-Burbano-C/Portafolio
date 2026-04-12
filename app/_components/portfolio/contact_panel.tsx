@@ -24,7 +24,6 @@ export default function ContactPanel() {
       firstParagraph: "Disponible para colaborar en proyectos web y frontend.",
       secondParagraph: "Si tienes una idea, la convertimos en una solucion funcional.",
       cta: "Enviar Mensaje",
-      footer: "Hecho por Carlos David Burbano Cuchala",
       formName: "Nombre",
       formEmail: "Correo",
       formMessage: "Mensaje",
@@ -41,7 +40,6 @@ export default function ContactPanel() {
       firstParagraph: "Available to collaborate on web and frontend projects.",
       secondParagraph: "If you have an idea, we can turn it into a functional solution.",
       cta: "Send Message",
-      footer: "Made by Carlos David Burbano Cuchala",
       formName: "Name",
       formEmail: "Email",
       formMessage: "Message",
@@ -173,9 +171,6 @@ export default function ContactPanel() {
         </form>
       </div>
 
-      <p className="relative mt-8 text-center text-sm text-slate-600 dark:text-slate-400">
-        {copy.footer}
-      </p>
       <div className="bg-sky-500 relative mx-auto mt-5 h-1 w-16 rounded-full sm:w-20" />
     </section>
   );
