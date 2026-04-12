@@ -1,14 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-const navItems = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#sobre-mi", label: "Sobre mi" },
-  { href: "#portafolio", label: "Portafolio" },
-  { href: "#experiencia", label: "Experiencia" },
-  { href: "#contacto", label: "Contacto" },
-];
+import { useEffect, useMemo, useState } from "react";
+import LanguageToggle from "../language-toggle";
+import ThemeToggle from "../theme-toggle";
+import { useLanguageValue } from "../../language";
 
 function NavLink({
   href,
@@ -27,8 +22,8 @@ function NavLink({
       onClick={onNavigate}
       className={
         active
-          ? "bg-blue-500 rounded-full px-4 py-2 text-sm font-semibold text-slate-950"
-          : "rounded-full px-4 py-2 text-sm font-medium text-gray-400"
+          ? "rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm dark:bg-blue-600 dark:text-white"
+          : "rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 dark:text-gray-400 dark:hover:text-white"
       }
     >
       {label}
@@ -39,6 +34,42 @@ function NavLink({
 export default function TopNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeHref, setActiveHref] = useState("#inicio");
+  const copy = useLanguageValue({
+    es: {
+      navItems: [
+        { href: "#inicio", label: "Inicio" },
+        { href: "#sobre-mi", label: "Sobre mi" },
+        { href: "#portafolio", label: "Portafolio" },
+        { href: "#experiencia", label: "Experiencia" },
+        { href: "#contacto", label: "Contacto" },
+      ],
+      role: "Frontend Developer",
+      cta: "Hablemos",
+      openMenu: "Abrir menu",
+      closeMenu: "Cerrar menu",
+      closeSidebar: "Cerrar sidebar",
+      menu: "Menu",
+      degree: "Ingenieria de Software",
+    },
+    en: {
+      navItems: [
+        { href: "#inicio", label: "Home" },
+        { href: "#sobre-mi", label: "About" },
+        { href: "#portafolio", label: "Portfolio" },
+        { href: "#experiencia", label: "Experience" },
+        { href: "#contacto", label: "Contact" },
+      ],
+      role: "Frontend Developer",
+      cta: "Let's talk",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
+      closeSidebar: "Close sidebar",
+      menu: "Menu",
+      degree: "Software Engineering",
+    },
+  });
+
+  const navItems = useMemo(() => copy.navItems, [copy.navItems]);
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -95,23 +126,23 @@ export default function TopNav() {
 
   return (
     <>
-      <header className="bg-slate-900 border-slate-700 sticky top-3 z-40 rounded-2xl border px-4 py-4 sm:top-4 sm:px-6">
+      <header className="sticky top-3 z-40 rounded-2xl border border-white/65 bg-white/70 px-4 py-4 shadow-[0_18px_50px_-28px_rgba(15,23,42,0.32)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900 sm:top-4 sm:px-6">
         <div className="flex items-center justify-between gap-4">
           <div className="flex min-w-0 items-center gap-3">
-            <div className="bg-slate-950 border-slate-700 text-cyan-300 flex h-11 w-11 items-center justify-center rounded-2xl border text-sm font-semibold">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-sky-100 bg-[linear-gradient(135deg,#ffffff_0%,#e0f2fe_100%)] text-sm font-semibold text-blue-700 shadow-sm dark:border-slate-700 dark:bg-none dark:bg-slate-950 dark:text-cyan-300">
               CB
             </div>
             <div className="min-w-0">
-              <p className="truncate text-sm font-semibold text-white">
+              <p className="truncate text-sm font-semibold text-slate-900 dark:text-white">
                 Carlos David Burbano Cuchala
               </p>
-              <p className="hidden text-sm text-gray-400 lg:block">
-                Frontend Developer
+              <p className="hidden text-sm text-slate-600 dark:text-gray-400 lg:block">
+                {copy.role}
               </p>
             </div>
           </div>
 
-          <nav className="border-slate-700 bg-slate-950 hidden items-center gap-1 rounded-full border p-1 md:flex">
+          <nav className="hidden items-center gap-1 rounded-full border border-sky-100 bg-white/80 p-1 shadow-inner dark:border-slate-700 dark:bg-slate-950 md:flex">
             {navItems.map((item) => (
               <NavLink
                 key={item.href}
@@ -123,13 +154,18 @@ export default function TopNav() {
             ))}
           </nav>
 
+          <div className="flex items-center gap-2">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
+
           <div className="hidden lg:block">
             <a
               href="#contacto"
               onClick={() => handleNavigate("#contacto")}
-              className="bg-blue-500 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-950"
+              className="inline-flex items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition-colors hover:bg-blue-700 dark:bg-blue-600 dark:text-slate-950 dark:hover:bg-blue-700"
             >
-              Hablemos
+              {copy.cta}
             </a>
           </div>
 
@@ -137,14 +173,14 @@ export default function TopNav() {
             type="button"
             aria-expanded={isOpen}
             aria-controls="mobile-sidebar"
-            aria-label="Abrir menu"
+            aria-label={copy.openMenu}
             onClick={() => setIsOpen((current) => !current)}
-            className="border-slate-700 bg-slate-950 flex h-11 w-11 items-center justify-center rounded-2xl border lg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl border border-sky-100 bg-white/85 shadow-sm dark:border-slate-700 dark:bg-slate-950 lg:hidden"
           >
             <span className="flex flex-col gap-1">
-              <span className="bg-foreground block h-0.5 w-5 rounded-full" />
-              <span className="bg-foreground block h-0.5 w-5 rounded-full" />
-              <span className="bg-foreground block h-0.5 w-5 rounded-full" />
+              <span className="block h-0.5 w-5 rounded-full bg-slate-900 dark:bg-white" />
+              <span className="block h-0.5 w-5 rounded-full bg-slate-900 dark:bg-white" />
+              <span className="block h-0.5 w-5 rounded-full bg-slate-900 dark:bg-white" />
             </span>
           </button>
         </div>
@@ -154,25 +190,27 @@ export default function TopNav() {
         <div className="fixed inset-0 z-50 lg:hidden">
           <button
             type="button"
-            aria-label="Cerrar menu"
+            aria-label={copy.closeMenu}
             onClick={() => setIsOpen(false)}
-            className="absolute inset-0 bg-slate-950/70"
+            className="absolute inset-0 bg-slate-900/70 dark:bg-slate-950/70"
           />
 
           <aside
             id="mobile-sidebar"
-            className="bg-slate-900 border-slate-700 absolute right-0 top-0 flex h-full w-72 max-w-full flex-col border-l px-5 py-6 shadow-lg"
+            className="absolute right-0 top-0 flex h-full w-72 max-w-full flex-col border-l border-white/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(239,246,255,0.96)_100%)] px-5 py-6 shadow-2xl backdrop-blur-xl dark:border-slate-700 dark:bg-none dark:bg-slate-900"
           >
             <div className="flex items-center justify-between gap-4">
               <div>
-                <p className="text-sm font-semibold text-white">Menu</p>
-                <p className="text-sm text-gray-400">Frontend Developer</p>
+                <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                  {copy.menu}
+                </p>
+                <p className="text-sm text-slate-600 dark:text-gray-400">{copy.role}</p>
               </div>
               <button
                 type="button"
-                aria-label="Cerrar sidebar"
+                aria-label={copy.closeSidebar}
                 onClick={() => setIsOpen(false)}
-                className="border-slate-700 bg-slate-950 text-white flex h-10 w-10 items-center justify-center rounded-2xl border text-lg"
+                className="flex h-10 w-10 items-center justify-center rounded-2xl border border-sky-100 bg-white text-lg text-slate-900 shadow-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white"
               >
                 X
               </button>
@@ -186,8 +224,8 @@ export default function TopNav() {
                   onClick={() => handleNavigate(item.href)}
                   className={
                     activeHref === item.href
-                      ? "bg-blue-500 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-950"
-                      : "bg-slate-950 border-slate-700 rounded-2xl border px-4 py-3 text-sm font-medium text-white"
+                      ? "rounded-2xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm dark:bg-blue-600 dark:text-slate-950"
+                      : "rounded-2xl border border-sky-100 bg-white/90 px-4 py-3 text-sm font-medium text-slate-900 shadow-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white"
                   }
                 >
                   {item.label}
@@ -198,18 +236,21 @@ export default function TopNav() {
             <a
               href="#contacto"
               onClick={() => handleNavigate("#contacto")}
-              className="bg-blue-500 mt-6 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-slate-950"
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 dark:bg-blue-600 dark:text-slate-950"
             >
-              Hablemos
+              {copy.cta}
             </a>
 
-            <div className="border-slate-700 mt-auto rounded-2xl border p-4">
-              <p className="text-sm font-semibold text-white">
-                Carlos David Burbano Cuchala
+            <div className="mt-auto rounded-2xl border border-sky-100 bg-white/70 p-4 text-slate-900 shadow-sm dark:border-slate-700 dark:bg-transparent dark:text-white">
+              <p className="text-sm font-semibold">Carlos David Burbano Cuchala</p>
+              <p className="mt-1 text-sm text-slate-600 dark:text-gray-400">
+                {copy.degree}
               </p>
-              <p className="mt-1 text-sm text-gray-400">
-                Navegacion movil simple, alineada con el kit modular.
-              </p>
+            </div>
+
+            <div className="mt-6 flex gap-2">
+              <LanguageToggle />
+              <ThemeToggle />
             </div>
           </aside>
         </div>
