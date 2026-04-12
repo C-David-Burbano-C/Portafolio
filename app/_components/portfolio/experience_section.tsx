@@ -7,23 +7,47 @@ function ExperienceItem({
   company,
   dates,
   description,
+  contact,
 }: {
   title: string;
   company: string;
   dates: string;
   description: string;
+  contact?: {
+    name: string;
+    phone: string;
+    email: string;
+    location: string;
+  };
 }) {
   return (
     <article className="relative ml-4 rounded-3xl border border-white/70 bg-gradient-to-br from-white to-slate-100 p-4 shadow-[0_18px_46px_-34px_rgba(15,23,42,0.3)] dark:border-slate-800 dark:bg-none dark:bg-slate-950 sm:ml-6 sm:p-6">
       <div className="bg-cyan-500 absolute -left-4 top-7 h-3 w-3 rounded-full shadow-md sm:-left-6 sm:h-4 sm:w-4" />
-      <h4 className="font-display text-lg font-semibold text-slate-900 dark:text-white sm:text-2xl">
-        {title}
-      </h4>
-      <p className="mt-2 text-sm text-cyan-700 dark:text-slate-400 sm:text-base">{company}</p>
-      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 sm:text-base">{dates}</p>
-      <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300 sm:text-base">
-        {description}
-      </p>
+      <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_240px] lg:items-start">
+        <div>
+          <h4 className="font-display text-lg font-semibold text-slate-900 dark:text-white sm:text-2xl">
+            {title}
+          </h4>
+          <p className="mt-2 text-sm text-cyan-700 dark:text-slate-400 sm:text-base">{company}</p>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 sm:text-base">{dates}</p>
+          <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300 sm:text-base">
+            {description}
+          </p>
+        </div>
+
+        {contact ? (
+          <div className="rounded-2xl border border-sky-100/80 bg-white/80 p-4 text-sm text-slate-600 shadow-sm backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-300">
+            <p className="font-semibold text-slate-900 dark:text-slate-50">{contact.name}</p>
+            <a href={`tel:${contact.phone.replace(/\s+/g, "")}`} className="mt-2 block">
+              {contact.phone}
+            </a>
+            <a href={`mailto:${contact.email}`} className="block break-all">
+              {contact.email}
+            </a>
+            <p className="mt-1">{contact.location}</p>
+          </div>
+        ) : null}
+      </div>
     </article>
   );
 }
@@ -37,11 +61,30 @@ export default function ExperienceSection() {
       subtitle: "Trayectoria profesional",
       items: [
         {
+          title: "Proyectos Web Personales",
+          company: "Portafolio y productos propios",
+          dates: "Actualidad",
+          description:
+            "Construccion de soluciones como Multivariable Explorer, LumpyMed, LabWise y mas.",
+          contact: {
+            name: "Carlos Burbano",
+            phone: "+57 3137507352",
+            email: "carlos.burbano@simerelectronics.com",
+            location: "Pasto, Colombia",
+          },
+        },
+        {
           title: "Analista Junior de Software",
           company: "SIMERELECTRONIC SAS",
           dates: "2026",
           description:
             "Analisis de requerimientos, soporte de procesos y mejora continua de software interno.",
+          contact: {
+            name: "Francisco Ramirez",
+            phone: "+57 3173526188",
+            email: "francisco.ramirez@simerelectronics.com",
+            location: "Pasto, Colombia",
+          },
         },
         {
           title: "Desarrollador Frontend",
@@ -49,13 +92,6 @@ export default function ExperienceSection() {
           dates: "2025",
           description:
             "Desarrollo de interfaces web modernas y optimizacion de experiencia de usuario.",
-        },
-        {
-          title: "Proyectos Web Personales",
-          company: "Portafolio y productos propios",
-          dates: "Actualidad",
-          description:
-            "Construccion de soluciones como Multivariable Explorer, LumpyMed, LabWise y mas.",
         },
       ],
     },
@@ -66,11 +102,30 @@ export default function ExperienceSection() {
       subtitle: "Professional path",
       items: [
         {
+          title: "Personal Web Projects",
+          company: "Portfolio and own products",
+          dates: "Present",
+          description:
+            "Creation of solutions such as Multivariable Explorer, LumpyMed, LabWise, and more.",
+          contact: {
+            name: "Carlos Burbano",
+            phone: "+57 3137507352",
+            email: "carlos.burbano@simerelectronics.com",
+            location: "Pasto, Colombia",
+          },
+        },
+        {
           title: "Junior Software Analyst",
           company: "SIMERELECTRONIC SAS",
           dates: "2026",
           description:
             "Requirements analysis, process support, and continuous improvement of internal software.",
+          contact: {
+            name: "Francisco Ramirez",
+            phone: "+57 3173526188",
+            email: "francisco.ramirez@simerelectronics.com",
+            location: "Pasto, Colombia",
+          },
         },
         {
           title: "Frontend Developer",
@@ -78,13 +133,6 @@ export default function ExperienceSection() {
           dates: "2025",
           description:
             "Development of modern web interfaces and optimization of user experience.",
-        },
-        {
-          title: "Personal Web Projects",
-          company: "Portfolio and own products",
-          dates: "Present",
-          description:
-            "Creation of solutions such as Multivariable Explorer, LumpyMed, LabWise, and more.",
         },
       ],
     },

@@ -1,28 +1,22 @@
 "use client";
 
+import { useState, type FormEvent } from "react";
 import { useLanguageValue } from "../../language";
 
-function ContactField({
-  label,
-  tall = false,
-}: {
-  label: string;
-  tall?: boolean;
-}) {
-  return (
-    <div
-      className={
-        tall
-          ? "rounded-2xl border border-white/70 bg-white/75 px-4 py-4 text-sm text-slate-600 shadow-sm dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400"
-          : "flex h-14 items-center rounded-2xl border border-white/70 bg-white/75 px-4 text-sm text-slate-600 shadow-sm dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400"
-      }
-    >
-      {label}
-    </div>
-  );
-}
+type FormState = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 export default function ContactPanel() {
+  const [form, setForm] = useState<FormState>({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [feedback, setFeedback] = useState<"idle" | "success" | "error">("idle");
   const copy = useLanguageValue({
     es: {
       eyebrow: "Contact",
@@ -34,21 +28,12 @@ export default function ContactPanel() {
       formName: "Nombre",
       formEmail: "Correo",
       formMessage: "Mensaje",
-      compactForm: "Formulario compacto",
-      people: [
-        {
-          name: "Carlos Burbano",
-          phone: "+57 3137507352",
-          email: "carlos.burbano@simerelectronics.com",
-          location: "Pasto, Colombia",
-        },
-        {
-          name: "Francisco Ramirez",
-          phone: "+57 3173526188",
-          email: "francisco.ramirez@simerelectronics.com",
-          location: "Pasto, Colombia",
-        },
-      ],
+      formNamePlaceholder: "Tu nombre",
+      formEmailPlaceholder: "tu@correo.com",
+      formMessagePlaceholder: "Cuentame sobre tu proyecto",
+      sending: "Enviando...",
+      success: "Mensaje enviado. Te respondere pronto.",
+      error: "Completa todos los campos para enviar el mensaje.",
     },
     en: {
       eyebrow: "Contact",
@@ -60,23 +45,39 @@ export default function ContactPanel() {
       formName: "Name",
       formEmail: "Email",
       formMessage: "Message",
-      compactForm: "Compact form",
-      people: [
-        {
-          name: "Carlos Burbano",
-          phone: "+57 3137507352",
-          email: "carlos.burbano@simerelectronics.com",
-          location: "Pasto, Colombia",
-        },
-        {
-          name: "Francisco Ramirez",
-          phone: "+57 3173526188",
-          email: "francisco.ramirez@simerelectronics.com",
-          location: "Pasto, Colombia",
-        },
-      ],
+      formNamePlaceholder: "Your name",
+      formEmailPlaceholder: "you@email.com",
+      formMessagePlaceholder: "Tell me about your project",
+      sending: "Sending...",
+      success: "Message sent. I will get back to you soon.",
+      error: "Fill in all fields to send the message.",
     },
   });
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setFeedback("error");
+      return;
+    }
+
+    setFeedback("idle");
+    setIsSubmitting(true);
+
+    window.setTimeout(() => {
+      setIsSubmitting(false);
+      setFeedback("success");
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    }, 900);
+  };
+
+  const feedbackMessage =
+    feedback === "success" ? copy.success : feedback === "error" ? copy.error : null;
 
   return (
     <section
@@ -102,46 +103,74 @@ export default function ContactPanel() {
             {copy.secondParagraph}
           </p>
 
-          <a
-            href="mailto:carlos.burbano@simerelectronics.com"
-            className="inline-flex rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition-colors hover:bg-sky-700 dark:bg-sky-400 dark:text-slate-950 dark:hover:bg-sky-300"
+          <button
+            type="submit"
+            form="contact-form"
+            disabled={isSubmitting}
+            className="inline-flex rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition-colors hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-sky-400 dark:text-slate-950 dark:hover:bg-sky-300"
           >
-            {copy.cta}
-          </a>
-
-          <div className="space-y-4 pt-2">
-            {copy.people.map((person) => (
-              <div
-                key={person.email}
-                className="rounded-2xl border border-white/70 bg-white/75 p-4 text-sm text-slate-600 shadow-sm backdrop-blur-sm dark:border-slate-800 dark:bg-slate-950/80 dark:text-slate-300"
-              >
-                <p className="font-semibold text-slate-900 dark:text-slate-50">{person.name}</p>
-                <a href={`tel:${person.phone.replace(/\s+/g, "")}`} className="block">
-                  {person.phone}
-                </a>
-                <a href={`mailto:${person.email}`} className="block">
-                  {person.email}
-                </a>
-                <p>{person.location}</p>
-              </div>
-            ))}
-          </div>
+            {isSubmitting ? copy.sending : copy.cta}
+          </button>
         </div>
 
-        <div className="space-y-4">
-          <div className="hidden sm:block">
-            <ContactField label={copy.formName} />
-          </div>
-          <div className="hidden sm:block">
-            <ContactField label={copy.formEmail} />
-          </div>
-          <div className="hidden sm:block">
-            <ContactField label={copy.formMessage} tall />
-          </div>
-          <div className="rounded-2xl border border-dashed border-sky-200 p-4 text-center text-xs uppercase tracking-[0.2em] text-slate-600 dark:border-slate-800 dark:text-slate-400 sm:hidden">
-            {copy.compactForm}
-          </div>
-        </div>
+        <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
+          <label className="block">
+            <span className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+              {copy.formName}
+            </span>
+            <input
+              type="text"
+              value={form.name}
+              onChange={(event) =>
+                setForm((current) => ({ ...current, name: event.target.value }))
+              }
+              placeholder={copy.formNamePlaceholder}
+              className="h-14 w-full rounded-2xl border border-white/70 bg-white/80 px-4 text-sm text-slate-700 shadow-sm outline-none transition-colors placeholder:text-slate-400 focus:border-sky-300 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-sky-500"
+            />
+          </label>
+
+          <label className="block">
+            <span className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+              {copy.formEmail}
+            </span>
+            <input
+              type="email"
+              value={form.email}
+              onChange={(event) =>
+                setForm((current) => ({ ...current, email: event.target.value }))
+              }
+              placeholder={copy.formEmailPlaceholder}
+              className="h-14 w-full rounded-2xl border border-white/70 bg-white/80 px-4 text-sm text-slate-700 shadow-sm outline-none transition-colors placeholder:text-slate-400 focus:border-sky-300 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-sky-500"
+            />
+          </label>
+
+          <label className="block">
+            <span className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
+              {copy.formMessage}
+            </span>
+            <textarea
+              value={form.message}
+              onChange={(event) =>
+                setForm((current) => ({ ...current, message: event.target.value }))
+              }
+              placeholder={copy.formMessagePlaceholder}
+              rows={5}
+              className="w-full rounded-2xl border border-white/70 bg-white/80 px-4 py-4 text-sm text-slate-700 shadow-sm outline-none transition-colors placeholder:text-slate-400 focus:border-sky-300 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-sky-500"
+            />
+          </label>
+
+          {feedbackMessage ? (
+            <p
+              className={
+                feedback === "success"
+                  ? "text-sm text-emerald-600 dark:text-emerald-400"
+                  : "text-sm text-rose-600 dark:text-rose-400"
+              }
+            >
+              {feedbackMessage}
+            </p>
+          ) : null}
+        </form>
       </div>
 
       <p className="relative mt-8 text-center text-sm text-slate-600 dark:text-slate-400">

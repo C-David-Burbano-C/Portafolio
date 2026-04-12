@@ -24,16 +24,12 @@ export default function ProjectCardBase({
 }: ProjectCardBaseProps) {
   const copy = useLanguageValue({
     es: {
-      preview: "Preview del proyecto",
       demo: "Demo",
       github: "GitHub",
-      footer: "Portfolio Card",
     },
     en: {
-      preview: "Project preview",
       demo: "Demo",
       github: "GitHub",
-      footer: "Project Card",
     },
   });
 
@@ -51,9 +47,6 @@ export default function ProjectCardBase({
         <div className="bg-cyan-500 absolute left-4 top-4 h-16 w-16 rounded-full opacity-20 blur-2xl" />
         <div className="bg-violet-500 absolute bottom-4 right-4 h-20 w-20 rounded-full opacity-20 blur-2xl" />
         <div className="bg-sky-500 absolute right-4 top-4 h-8 w-8 rounded-full opacity-80" />
-        <div className="absolute bottom-3 left-3 rounded-full border border-white/75 bg-white/90 px-3 py-2 text-xs font-semibold text-slate-900 shadow-md backdrop-blur-sm dark:border-slate-800 dark:bg-slate-950 dark:text-slate-50 sm:bottom-4 sm:left-4 sm:px-4 sm:text-sm">
-          {copy.preview}
-        </div>
       </div>
 
       <h3 className="font-display mt-4 text-xl font-semibold text-slate-900 dark:text-white sm:mt-5 sm:text-2xl">
@@ -82,11 +75,6 @@ export default function ProjectCardBase({
           {copy.github}
         </a>
       </div>
-
-      <div className="mt-4 h-px w-full bg-sky-100 dark:bg-slate-800" />
-      <p className="mt-4 text-[11px] uppercase tracking-[0.2em] text-slate-600 dark:text-slate-400 sm:text-xs">
-        {copy.footer}
-      </p>
     </article>
   );
 }
