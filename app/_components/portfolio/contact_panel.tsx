@@ -13,8 +13,8 @@ function ContactField({
     <div
       className={
         tall
-          ? "rounded-2xl border border-white/70 bg-white/75 px-4 py-4 text-sm text-slate-600 shadow-sm dark:border-slate-700 dark:bg-slate-950 dark:text-gray-400"
-          : "flex h-14 items-center rounded-2xl border border-white/70 bg-white/75 px-4 text-sm text-slate-600 shadow-sm dark:border-slate-700 dark:bg-slate-950 dark:text-gray-400"
+          ? "rounded-2xl border border-white/70 bg-white/75 px-4 py-4 text-sm text-slate-600 shadow-sm dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400"
+          : "flex h-14 items-center rounded-2xl border border-white/70 bg-white/75 px-4 text-sm text-slate-600 shadow-sm dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400"
       }
     >
       {label}
@@ -81,30 +81,30 @@ export default function ContactPanel() {
   return (
     <section
       id="contacto"
-      className="relative overflow-hidden rounded-3xl border border-white/65 bg-[linear-gradient(145deg,rgba(255,255,255,0.94)_0%,rgba(239,246,255,0.88)_50%,rgba(238,242,255,0.88)_100%)] px-5 py-6 shadow-[0_22px_60px_-36px_rgba(37,99,235,0.3)] backdrop-blur-sm dark:border-slate-700 dark:bg-none dark:bg-slate-900 sm:px-8 sm:py-8"
+      className="scroll-mt-24 relative overflow-hidden rounded-3xl border border-white/65 bg-[linear-gradient(145deg,rgba(255,255,255,0.94)_0%,rgba(239,246,255,0.88)_50%,rgba(238,242,255,0.88)_100%)] px-5 py-6 shadow-[0_22px_60px_-36px_rgba(37,99,235,0.3)] backdrop-blur-sm dark:border-slate-800 dark:bg-none dark:bg-slate-950 sm:px-8 sm:py-8"
     >
       <div className="bg-cyan-500 absolute -left-10 -top-12 h-32 w-32 rounded-full opacity-20 blur-3xl" />
-      <div className="bg-blue-500 absolute -right-10 -top-10 h-28 w-28 rounded-full opacity-20 blur-3xl" />
+      <div className="bg-sky-500 absolute -right-10 -top-10 h-28 w-28 rounded-full opacity-20 blur-3xl" />
       <div className="bg-violet-500 absolute bottom-0 right-1/3 h-24 w-24 rounded-full opacity-20 blur-3xl" />
 
       <div className="relative grid gap-6 sm:gap-8 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="space-y-4">
-          <p className="text-cyan-700 dark:text-cyan-200 text-sm font-medium uppercase tracking-[0.2em]">
+          <p className="text-cyan-700 dark:text-sky-300 text-sm font-medium uppercase tracking-[0.2em]">
             {copy.eyebrow}
           </p>
           <h2 className="font-display text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl lg:text-5xl">
             {copy.title}
           </h2>
-          <p className="text-sm leading-7 text-slate-600 dark:text-slate-200 sm:text-lg">
+          <p className="text-sm leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             {copy.firstParagraph}
           </p>
-          <p className="text-sm leading-7 text-slate-600 dark:text-slate-200 sm:text-lg">
+          <p className="text-sm leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             {copy.secondParagraph}
           </p>
 
           <a
             href="mailto:carlos.burbano@simerelectronics.com"
-            className="inline-flex rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition-colors hover:bg-blue-700 dark:bg-blue-600 dark:text-slate-950 dark:hover:bg-blue-700"
+            className="inline-flex rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition-colors hover:bg-sky-700 dark:bg-sky-400 dark:text-slate-950 dark:hover:bg-sky-300"
           >
             {copy.cta}
           </a>
@@ -113,7 +113,7 @@ export default function ContactPanel() {
             {copy.people.map((person) => (
               <div
                 key={person.email}
-                className="rounded-2xl border border-white/70 bg-white/75 p-4 text-sm text-slate-600 shadow-sm backdrop-blur-sm dark:border-slate-700 dark:bg-slate-950/80 dark:text-slate-200"
+                className="rounded-2xl border border-white/70 bg-white/75 p-4 text-sm text-slate-600 shadow-sm backdrop-blur-sm dark:border-slate-800 dark:bg-slate-950/80 dark:text-slate-300"
               >
                 <p className="font-semibold text-slate-900 dark:text-slate-50">{person.name}</p>
                 <a href={`tel:${person.phone.replace(/\s+/g, "")}`} className="block">
@@ -138,16 +138,16 @@ export default function ContactPanel() {
           <div className="hidden sm:block">
             <ContactField label={copy.formMessage} tall />
           </div>
-          <div className="rounded-2xl border border-dashed border-sky-200 p-4 text-center text-xs uppercase tracking-[0.2em] text-slate-600 dark:border-slate-700 dark:text-gray-400 sm:hidden">
+          <div className="rounded-2xl border border-dashed border-sky-200 p-4 text-center text-xs uppercase tracking-[0.2em] text-slate-600 dark:border-slate-800 dark:text-slate-400 sm:hidden">
             {copy.compactForm}
           </div>
         </div>
       </div>
 
-      <p className="relative mt-8 text-center text-sm text-slate-600 dark:text-gray-400">
+      <p className="relative mt-8 text-center text-sm text-slate-600 dark:text-slate-400">
         {copy.footer}
       </p>
-      <div className="bg-blue-500 relative mx-auto mt-5 h-1 w-16 rounded-full sm:w-20" />
+      <div className="bg-sky-500 relative mx-auto mt-5 h-1 w-16 rounded-full sm:w-20" />
     </section>
   );
 }

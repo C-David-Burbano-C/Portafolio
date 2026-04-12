@@ -5,7 +5,7 @@ import {
   startTransition,
   useContext,
   useEffect,
-  useState,
+  useSyncExternalStore,
 } from "react";
 
 export type Language = "es" | "en";
@@ -17,8 +17,10 @@ type LanguageContextValue = {
 };
 
 const LANGUAGE_STORAGE_KEY = "language";
+const languageListeners = new Set<() => void>();
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
+const emptySubscribe = () => () => {};
 
 function getStoredLanguage(): Language {
   if (typeof window === "undefined") {
@@ -29,15 +31,16 @@ function getStoredLanguage(): Language {
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("es");
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
+  const language = useSyncExternalStore<Language>(
+    subscribeLanguage,
+    getStoredLanguage,
+    () => "es",
+  );
 
   useEffect(() => {
-    const initialLanguage = getStoredLanguage();
-    document.documentElement.lang = initialLanguage;
-    setLanguageState(initialLanguage);
-    setMounted(true);
-  }, []);
+    document.documentElement.lang = language;
+  }, [language]);
 
   const setLanguage = (nextLanguage: Language) => {
     if (typeof window === "undefined") {
@@ -47,7 +50,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
     document.documentElement.lang = nextLanguage;
     startTransition(() => {
-      setLanguageState(nextLanguage);
+      languageListeners.forEach((listener) => listener());
     });
   };
 
@@ -71,4 +74,12 @@ export function useLanguage() {
 export function useLanguageValue<T>(values: Record<Language, T>) {
   const { language } = useLanguage();
   return values[language];
+}
+
+function subscribeLanguage(listener: () => void) {
+  languageListeners.add(listener);
+
+  return () => {
+    languageListeners.delete(listener);
+  };
 }

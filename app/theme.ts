@@ -1,6 +1,7 @@
 export type Theme = "light" | "dark";
 
 const THEME_STORAGE_KEY = "theme";
+const themeListeners = new Set<() => void>();
 
 type ViewTransitionDocument = Document & {
   startViewTransition?: (updateCallback: () => void) => void;
@@ -30,6 +31,7 @@ export function applyTheme(theme: Theme) {
   root.classList.toggle("dark", theme === "dark");
   root.style.colorScheme = theme;
   window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+  themeListeners.forEach((listener) => listener());
 }
 
 export function applyThemeWithTransition(theme: Theme) {
@@ -47,4 +49,12 @@ export function applyThemeWithTransition(theme: Theme) {
   }
 
   applyTheme(theme);
+}
+
+export function subscribeTheme(listener: () => void) {
+  themeListeners.add(listener);
+
+  return () => {
+    themeListeners.delete(listener);
+  };
 }

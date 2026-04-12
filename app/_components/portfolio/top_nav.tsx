@@ -22,8 +22,8 @@ function NavLink({
       onClick={onNavigate}
       className={
         active
-          ? "rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm dark:bg-blue-600 dark:text-white"
-          : "rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 dark:text-gray-400 dark:hover:text-white"
+          ? "rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm dark:bg-slate-800 dark:text-slate-100"
+          : "rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
       }
     >
       {label}
@@ -126,23 +126,23 @@ export default function TopNav() {
 
   return (
     <>
-      <header className="sticky top-3 z-40 rounded-2xl border border-white/65 bg-white/70 px-4 py-4 shadow-[0_18px_50px_-28px_rgba(15,23,42,0.32)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900 sm:top-4 sm:px-6">
+      <header className="sticky top-3 z-40 rounded-2xl border border-white/65 bg-white/70 px-4 py-4 shadow-[0_18px_50px_-28px_rgba(15,23,42,0.32)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/95 sm:top-4 sm:px-6">
         <div className="flex items-center justify-between gap-4">
           <div className="flex min-w-0 items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-sky-100 bg-[linear-gradient(135deg,#ffffff_0%,#e0f2fe_100%)] text-sm font-semibold text-blue-700 shadow-sm dark:border-slate-700 dark:bg-none dark:bg-slate-950 dark:text-cyan-300">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-sky-100 bg-[linear-gradient(135deg,#ffffff_0%,#e0f2fe_100%)] text-sm font-semibold text-sky-700 shadow-sm dark:border-sky-900/50 dark:bg-none dark:bg-slate-900 dark:text-sky-300">
               CB
             </div>
             <div className="min-w-0">
               <p className="truncate text-sm font-semibold text-slate-900 dark:text-white">
                 Carlos David Burbano Cuchala
               </p>
-              <p className="hidden text-sm text-slate-600 dark:text-gray-400 lg:block">
+              <p className="hidden text-sm text-slate-600 dark:text-slate-400 lg:block">
                 {copy.role}
               </p>
             </div>
           </div>
 
-          <nav className="hidden items-center gap-1 rounded-full border border-sky-100 bg-white/80 p-1 shadow-inner dark:border-slate-700 dark:bg-slate-950 md:flex">
+          <nav className="hidden items-center gap-1 rounded-full border border-sky-100 bg-white/80 p-1 shadow-inner dark:border-slate-800 dark:bg-slate-950/80 md:flex">
             {navItems.map((item) => (
               <NavLink
                 key={item.href}
@@ -163,7 +163,7 @@ export default function TopNav() {
             <a
               href="#contacto"
               onClick={() => handleNavigate("#contacto")}
-              className="inline-flex items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition-colors hover:bg-blue-700 dark:bg-blue-600 dark:text-slate-950 dark:hover:bg-blue-700"
+              className="inline-flex items-center justify-center rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition-colors hover:bg-sky-700 dark:bg-sky-400 dark:text-slate-950 dark:hover:bg-sky-300"
             >
               {copy.cta}
             </a>
@@ -175,7 +175,7 @@ export default function TopNav() {
             aria-controls="mobile-sidebar"
             aria-label={copy.openMenu}
             onClick={() => setIsOpen((current) => !current)}
-            className="flex h-11 w-11 items-center justify-center rounded-2xl border border-sky-100 bg-white/85 shadow-sm dark:border-slate-700 dark:bg-slate-950 lg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl border border-sky-100 bg-white/85 shadow-sm dark:border-slate-800 dark:bg-slate-900 lg:hidden"
           >
             <span className="flex flex-col gap-1">
               <span className="block h-0.5 w-5 rounded-full bg-slate-900 dark:bg-white" />
@@ -192,25 +192,25 @@ export default function TopNav() {
             type="button"
             aria-label={copy.closeMenu}
             onClick={() => setIsOpen(false)}
-            className="absolute inset-0 bg-slate-900/70 dark:bg-slate-950/70"
+            className="absolute inset-0 bg-slate-900/70 dark:bg-slate-950/80"
           />
 
           <aside
             id="mobile-sidebar"
-            className="absolute right-0 top-0 flex h-full w-72 max-w-full flex-col border-l border-white/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(239,246,255,0.96)_100%)] px-5 py-6 shadow-2xl backdrop-blur-xl dark:border-slate-700 dark:bg-none dark:bg-slate-900"
+            className="absolute right-0 top-0 flex h-full w-72 max-w-full flex-col border-l border-white/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(239,246,255,0.96)_100%)] px-5 py-6 shadow-2xl backdrop-blur-xl dark:border-slate-800 dark:bg-none dark:bg-gradient-to-r dark:from-slate-950 dark:to-slate-900"
           >
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold text-slate-900 dark:text-white">
                   {copy.menu}
                 </p>
-                <p className="text-sm text-slate-600 dark:text-gray-400">{copy.role}</p>
+                <p className="text-sm text-slate-600 dark:text-slate-400">{copy.role}</p>
               </div>
               <button
                 type="button"
                 aria-label={copy.closeSidebar}
                 onClick={() => setIsOpen(false)}
-                className="flex h-10 w-10 items-center justify-center rounded-2xl border border-sky-100 bg-white text-lg text-slate-900 shadow-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-2xl border border-sky-100 bg-white text-lg text-slate-900 shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:text-white"
               >
                 X
               </button>
@@ -224,8 +224,8 @@ export default function TopNav() {
                   onClick={() => handleNavigate(item.href)}
                   className={
                     activeHref === item.href
-                      ? "rounded-2xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm dark:bg-blue-600 dark:text-slate-950"
-                      : "rounded-2xl border border-sky-100 bg-white/90 px-4 py-3 text-sm font-medium text-slate-900 shadow-sm dark:border-slate-700 dark:bg-slate-950 dark:text-white"
+                      ? "rounded-2xl bg-sky-600 px-4 py-3 text-sm font-semibold text-white shadow-sm dark:bg-slate-800 dark:text-slate-100"
+                      : "rounded-2xl border border-sky-100 bg-white/90 px-4 py-3 text-sm font-medium text-slate-900 shadow-sm dark:border-slate-800 dark:bg-slate-950 dark:text-white"
                   }
                 >
                   {item.label}
@@ -236,14 +236,14 @@ export default function TopNav() {
             <a
               href="#contacto"
               onClick={() => handleNavigate("#contacto")}
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 dark:bg-blue-600 dark:text-slate-950"
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 dark:bg-sky-400 dark:text-slate-950"
             >
               {copy.cta}
             </a>
 
-            <div className="mt-auto rounded-2xl border border-sky-100 bg-white/70 p-4 text-slate-900 shadow-sm dark:border-slate-700 dark:bg-transparent dark:text-white">
+            <div className="mt-auto rounded-2xl border border-sky-100 bg-white/70 p-4 text-slate-900 shadow-sm dark:border-slate-800 dark:bg-slate-950/70 dark:text-white">
               <p className="text-sm font-semibold">Carlos David Burbano Cuchala</p>
-              <p className="mt-1 text-sm text-slate-600 dark:text-gray-400">
+              <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
                 {copy.degree}
               </p>
             </div>

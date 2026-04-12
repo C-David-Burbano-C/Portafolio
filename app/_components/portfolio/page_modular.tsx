@@ -21,7 +21,7 @@ export default function PortfolioModularPage() {
   });
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(34,211,238,0.18),transparent_24%),radial-gradient(circle_at_85%_12%,rgba(59,130,246,0.16),transparent_28%),radial-gradient(circle_at_50%_100%,rgba(168,85,247,0.12),transparent_30%),linear-gradient(180deg,#f8fbff_0%,#edf4ff_48%,#f6f3ff_100%)] text-slate-800 dark:bg-none dark:bg-slate-950 dark:text-slate-100">
+    <main className="min-h-screen bg-gradient-to-b from-sky-50 via-blue-50 to-violet-50 text-slate-800 dark:bg-gradient-to-r dark:from-teal-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-100">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-4 sm:gap-8 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
         <TopNav />
         <HeroSection />
@@ -31,7 +31,7 @@ export default function PortfolioModularPage() {
           <SkillsSection />
         </section>
 
-        <section id="portafolio" className="flex flex-col gap-5 sm:gap-6">
+        <section id="portafolio" className="scroll-mt-24 flex flex-col gap-5 sm:gap-6">
           <SectionBand title={copy.portfolioTitle} showBottomBar />
           <ProjectCardsAll />
         </section>

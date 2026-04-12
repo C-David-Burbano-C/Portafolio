@@ -1,18 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { MoonIcon, SunIcon } from "./icons";
 import { useLanguageValue } from "../language";
 import {
-  applyTheme,
   applyThemeWithTransition,
   getPreferredTheme,
-  type Theme,
+  subscribeTheme,
 } from "../theme";
 
+const emptySubscribe = () => () => {};
+
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
+  const theme = useSyncExternalStore(subscribeTheme, getPreferredTheme, () => "light");
   const copy = useLanguageValue({
     es: {
       aria: "Alternar tema",
@@ -26,17 +27,9 @@ export default function ThemeToggle() {
     },
   });
 
-  useEffect(() => {
-    const currentTheme = getPreferredTheme();
-    applyTheme(currentTheme);
-    setTheme(currentTheme);
-    setMounted(true);
-  }, []);
-
   const toggleTheme = () => {
-    const nextTheme: Theme = theme === "light" ? "dark" : "light";
+    const nextTheme = theme === "light" ? "dark" : "light";
     applyThemeWithTransition(nextTheme);
-    setTheme(nextTheme);
   };
 
   if (!mounted) {
@@ -53,7 +46,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="rounded-full border-2 border-sky-100 bg-[linear-gradient(135deg,#ffffff_0%,#e0f2fe_100%)] p-2 text-slate-900 shadow-sm transition-colors hover:border-sky-200 hover:bg-sky-50 dark:border-slate-600 dark:bg-none dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700"
+      className="rounded-full border-2 border-sky-100 bg-[linear-gradient(135deg,#ffffff_0%,#e0f2fe_100%)] p-2 text-slate-900 shadow-sm transition-colors hover:border-sky-200 hover:bg-sky-50 dark:border-slate-800 dark:bg-none dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
       title={theme === "dark" ? copy.light : copy.dark}
       aria-label={copy.aria}
     >
