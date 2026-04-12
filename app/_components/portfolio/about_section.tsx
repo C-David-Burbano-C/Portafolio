@@ -48,25 +48,27 @@ export default function AboutSection() {
     >
       <div className="absolute right-0 top-0 h-28 w-28 rounded-full bg-cyan-400 opacity-20 blur-3xl dark:bg-cyan-500 dark:opacity-10" />
 
-      <div className="relative grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3 lg:items-center">
-        <div>
-          <p className="text-cyan-700 dark:text-sky-300 text-sm font-medium uppercase tracking-[0.2em]">
-            {copy.eyebrow}
-          </p>
-          <h2 className="font-display mt-2 text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl lg:text-5xl">
-            {copy.title}
-          </h2>
+      <div className="relative flex flex-col gap-6 lg:grid lg:grid-cols-3 lg:items-center">
+        <div className="flex items-center justify-between gap-4 lg:contents">
+          <div>
+            <p className="hidden text-sm font-medium uppercase tracking-[0.2em] text-cyan-700 dark:text-sky-300 sm:block">
+              {copy.eyebrow}
+            </p>
+            <h2 className="font-display text-3xl font-semibold text-slate-900 dark:text-white sm:mt-2 sm:text-4xl lg:text-5xl">
+              {copy.title}
+            </h2>
+          </div>
+
+          <div className="shrink-0 justify-self-center lg:flex lg:justify-center">
+            <Portrait alt={copy.imageAlt} />
+          </div>
         </div>
 
-        <div className="flex justify-end lg:justify-center">
-          <Portrait alt={copy.imageAlt} />
-        </div>
-
-        <div className="col-span-2 lg:col-span-1">
-          <p className="text-sm leading-6 text-slate-600 dark:text-slate-300 sm:text-base sm:leading-7 lg:text-lg">
+        <div className="lg:col-span-1">
+          <p className="text-sm leading-8 text-slate-600 dark:text-slate-300 sm:text-base sm:leading-7 lg:text-lg">
             {copy.firstParagraph}
           </p>
-          <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300 sm:text-base sm:leading-7 lg:text-lg">
+          <p className="mt-3 text-sm leading-8 text-slate-600 dark:text-slate-300 sm:text-base sm:leading-7 lg:text-lg">
             {copy.secondParagraph}
           </p>
         </div>

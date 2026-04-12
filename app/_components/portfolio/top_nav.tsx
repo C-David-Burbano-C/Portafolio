@@ -154,7 +154,7 @@ export default function TopNav() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="hidden items-center gap-2 lg:flex">
             <LanguageToggle />
             <ThemeToggle />
           </div>
