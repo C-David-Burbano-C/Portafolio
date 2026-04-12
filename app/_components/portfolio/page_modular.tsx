@@ -20,7 +20,7 @@ export default function PortfolioModularPage() {
         </section>
 
         <section id="portafolio" className="flex flex-col gap-6">
-          <SectionBand title="Portafolio" />
+          <SectionBand title="Portafolio" showBottomBar />
           <ProjectCardsAll />
         </section>
 

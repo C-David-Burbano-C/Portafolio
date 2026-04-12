@@ -1,5 +1,11 @@
 import ProjectCardBase from "./project_card_base";
 
 export default function ProjectBatteryLifeEstimatorCard() {
-  return <ProjectCardBase title="Battery Life Estimator" />;
+  return (
+    <ProjectCardBase
+      title="Battery Life Estimator"
+      summary="Estimador de vida util y rendimiento de bateria para motocicleta electrica."
+      tools="Analisis de datos, frontend"
+    />
+  );
 }
