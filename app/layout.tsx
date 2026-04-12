@@ -3,8 +3,8 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Portafolio",
-  description: "Base modular del portafolio en Next.js",
+  title: "Carlos Burbano",
+  description: "Portafolio Carlos Burbano",
 };
 
 export default function RootLayout({
