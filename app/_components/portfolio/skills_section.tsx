@@ -10,12 +10,12 @@ export default function SkillsSection() {
       skills: [
         {
           title: "Frontend",
-          detail: "Angular, TypeScript y Tailwind",
+          detail: "Angular, TypeScript, Tailwind e IA",
           tone: "bg-cyan-500",
         },
         {
           title: "Backend y Datos",
-          detail: "Python, Django, SQL y PostgreSQL",
+          detail: "Python, Django, SQL, PostgreSQL e IA",
           tone: "bg-sky-500",
         },
         {
@@ -31,12 +31,12 @@ export default function SkillsSection() {
       skills: [
         {
           title: "Frontend",
-          detail: "Angular, TypeScript, and Tailwind",
+          detail: "Angular, TypeScript, Tailwind, and AI",
           tone: "bg-cyan-500",
         },
         {
           title: "Backend & Data",
-          detail: "Python, Django, SQL, and PostgreSQL",
+          detail: "Python, Django, SQL, PostgreSQL, and AI",
           tone: "bg-sky-500",
         },
         {
