@@ -14,10 +14,10 @@ import ProjectCardsAll from "./projects/project_cards_all";
 export default function PortfolioModularPage() {
   const copy = useLanguageValue({
     es: {
-      portfolioTitle: "Portafolio",
+      portfolioTitle: "Proyectos",
     },
     en: {
-      portfolioTitle: "Portfolio",
+      portfolioTitle: "Projects",
     },
   });
 

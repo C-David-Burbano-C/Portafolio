@@ -20,7 +20,7 @@ export default function SkillsSection() {
         },
         {
           title: "Herramientas",
-          detail: "Java, XAMPP, soporte tecnico y redes",
+          detail: "Java, soporte tecnico y redes",
           tone: "bg-violet-500",
         },
       ],
@@ -41,7 +41,7 @@ export default function SkillsSection() {
         },
         {
           title: "Tooling",
-          detail: "Java, XAMPP, technical support, and networks",
+          detail: "Java, technical support, and networks",
           tone: "bg-violet-500",
         },
       ],

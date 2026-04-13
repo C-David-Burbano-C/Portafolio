@@ -116,7 +116,7 @@ export default function ExperienceSection() {
         },
         {
           category: "Experiencia Laboral",
-          title: "Desarrollador Frontend",
+          title: "Desarrollador Fullstack",
           company: "SIMERELECTRONIC SAS",
           dates: "2024-2025",
           description:
@@ -186,7 +186,7 @@ export default function ExperienceSection() {
         },
         {
           category: "Work Experience",
-          title: "Frontend Developer",
+          title: "Fullstack Developer",
           company: "SIMERELECTRONIC SAS",
           dates: "2024-2025",
           description:

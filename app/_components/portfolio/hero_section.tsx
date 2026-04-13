@@ -66,9 +66,9 @@ export default function HeroSection() {
     es: {
       eyebrow: "Inicio",
       title: "Innovo sin limites: convierto ideas en productos reales.",
-      role: "Frontend Developer",
+      role: "Fullstack Developer",
       description:
-        "Frontend Developer en formacion en la Universidad Cooperativa de Colombia (Pasto), con experiencia en desarrollo web y bases de datos con TypeScript, Angular, Python, Java, SQL, Django y PostgreSQL.",
+        "Fullstack Developer en formacion en la Universidad Cooperativa de Colombia (Pasto), con experiencia en desarrollo web y bases de datos con TypeScript, Angular, Python, Java, SQL, Django y PostgreSQL.",
       cta: "Contactame",
       heroAlt: "Visual del hero",
       orbitLabels: {
@@ -85,9 +85,9 @@ export default function HeroSection() {
     en: {
       eyebrow: "Home",
       title: "I build real products from bold ideas.",
-      role: "Frontend Developer",
+      role: "Fullstack Developer",
       description:
-        "Frontend developer in training at Universidad Cooperativa de Colombia (Pasto), with experience in web development and databases using TypeScript, Angular, Python, Java, SQL, Django, and PostgreSQL.",
+        "Fullstack developer in training at Universidad Cooperativa de Colombia (Pasto), with experience in web development and databases using TypeScript, Angular, Python, Java, SQL, Django, and PostgreSQL.",
       cta: "Contact me",
       heroAlt: "Hero visual",
       orbitLabels: {
