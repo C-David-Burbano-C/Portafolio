@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { GitHubIcon } from "../icons";
 import LanguageToggle from "../language-toggle";
 import ThemeToggle from "../theme-toggle";
 import { useLanguageValue } from "../../language";
@@ -50,6 +51,8 @@ export default function TopNav() {
       closeSidebar: "Cerrar sidebar",
       menu: "Menu",
       degree: "Ingenieria de Software",
+      github: "GitHub",
+      githubProfile: "Ver perfil de GitHub",
     },
     en: {
       navItems: [
@@ -66,8 +69,11 @@ export default function TopNav() {
       closeSidebar: "Close sidebar",
       menu: "Menu",
       degree: "Software Engineering",
+      github: "GitHub",
+      githubProfile: "Open GitHub profile",
     },
   });
+  const githubUrl = "https://github.com/C-David-Burbano-C";
 
   const navItems = useMemo(() => copy.navItems, [copy.navItems]);
 
@@ -241,6 +247,18 @@ export default function TopNav() {
               {copy.cta}
             </a>
 
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setIsOpen(false)}
+              aria-label={copy.githubProfile}
+              className="mt-3 inline-flex items-center justify-center gap-3 rounded-2xl border border-slate-900/10 bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 dark:border-slate-700 dark:bg-slate-100 dark:text-slate-950"
+            >
+              <GitHubIcon className="h-5 w-5" />
+              <span>{copy.github}</span>
+            </a>
+
             <div className="mt-auto rounded-2xl border border-sky-100 bg-white/70 p-4 text-slate-900 shadow-sm dark:border-slate-800 dark:bg-slate-950/70 dark:text-white">
               <p className="text-sm font-semibold">Carlos David Burbano Cuchala</p>
               <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
@@ -255,6 +273,17 @@ export default function TopNav() {
           </aside>
         </div>
       ) : null}
+
+      <a
+        href={githubUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={copy.githubProfile}
+        className="fixed bottom-6 right-6 z-40 hidden items-center gap-3 rounded-full border border-slate-900/10 bg-slate-950 px-5 py-4 text-sm font-semibold text-white shadow-[0_20px_50px_-20px_rgba(15,23,42,0.7)] transition-transform hover:-translate-y-1 hover:bg-slate-900 dark:border-slate-700 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100 lg:inline-flex"
+      >
+        <GitHubIcon className="h-5 w-5" />
+        <span>{copy.github}</span>
+      </a>
     </>
   );
 }
